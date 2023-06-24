@@ -21,8 +21,8 @@ export class BookingentryDTO extends BaseDTO {
     @IsNotEmpty()
     hospital: string;
 
-    @IsNotEmpty()
-    days: string;
+    // @IsNotEmpty()
+    // days: string;
 
     @IsNotEmpty()
     starttime: string;
@@ -35,10 +35,18 @@ export class BookingentryDTO extends BaseDTO {
         this.mslno = bookingentry001mb.mslno;
         this.dslno = bookingentry001mb.dslno;
         this.staff = bookingentry001mb.staff;
-        this.days = bookingentry001mb.days;
+        // this.days = bookingentry001mb.days;
         this.date = bookingentry001mb.date;
-        this.starttime = bookingentry001mb.starttime;
-        this.endtime = bookingentry001mb.endtime;
+        // this.starttime = bookingentryDTO.starttime;
+        let starttime = new Date(bookingentry001mb.starttime);
+        // console.log("starttime", starttime);
+        this.starttime = starttime.getHours() + ":" + starttime.getMinutes();
+        // console.log("After", this.starttime);
+        // this.endtime = bookingentryDTO.endtime;
+        let endtime = new Date(bookingentry001mb.endtime);
+        // console.log("endtime", endtime);
+        this.endtime = endtime.getHours() + ":" + endtime.getMinutes();
+        // console.log("After", this.endtime);
         this.hospital = bookingentry001mb.hospital;
         this.insertUser = bookingentry001mb.insertUser;
         this.insertDatetime = bookingentry001mb.insertDatetime;
