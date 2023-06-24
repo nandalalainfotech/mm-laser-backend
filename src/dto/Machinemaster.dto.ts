@@ -9,7 +9,7 @@ export class MachinemasterDTO extends BaseDTO {
     machinename: string | null;
 
     @IsNotEmpty()
-    status: string | null;
+    status: string;
 
 
     setProperties(machinemaster001mb: Machinemaster001mb) {

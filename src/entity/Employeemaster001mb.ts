@@ -1,9 +1,8 @@
-import { BaseDTO } from "src/dto/Base.dto";
 import { EmployeemasterDTO } from "src/dto/Employeemaster.dto";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("employeemaster001mb", { schema: "erpnextgeneration5" })
-export class Employeemaster001mb extends BaseDTO {
+export class Employeemaster001mb {
   @PrimaryGeneratedColumn({ type: "int", name: "employeeId" })
   employeeId: number;
 
@@ -18,6 +17,18 @@ export class Employeemaster001mb extends BaseDTO {
 
   @Column("varchar", { name: "status", nullable: true, length: 255 })
   status: string | null;
+
+  @Column("varchar", { name: "insert_user", nullable: true, length: 40 })
+  insertUser: string | null;
+
+  @Column("datetime", { name: "insert_datetime", nullable: true })
+  insertDatetime: Date | null;
+
+  @Column("varchar", { name: "updated_user", nullable: true, length: 40 })
+  updatedUser: string | null;
+
+  @Column("datetime", { name: "updated_datetime", nullable: true })
+  updatedDatetime: Date | null;
 
   setProperties(employeemasterDTO: EmployeemasterDTO) {
     this.employeeId = employeemasterDTO.employeeId

@@ -4,7 +4,7 @@ import { ApplanguagesettingDTO } from "./Applanguagesetting.dto";
 
 export class UserDTO extends BaseDTO {
     personId: number;
-    domain: string;
+    // domain: string;
     username: string;
     password: string;
     status: string;
@@ -20,7 +20,7 @@ export class UserDTO extends BaseDTO {
 
     setProperties(user001mb: User001mb) {
         this.personId = user001mb.personId;
-        this.domain = user001mb.domain;
+        // this.domain = user001mb.domain;
         this.username = user001mb.username;
         this.firstname = user001mb.firstname;
         this.lastname = user001mb.lastname;

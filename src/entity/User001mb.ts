@@ -17,8 +17,8 @@ export class User001mb {
   @PrimaryGeneratedColumn({ type: "int", name: "person_id" })
   personId: number;
 
-  @Column("varchar", { name: "domain", nullable: true, length: 40 })
-  domain: string | null;
+  // @Column("varchar", { name: "domain", nullable: true, length: 40 })
+  // domain: string | null;
 
   @Column("varchar", { name: "username", nullable: true, length: 40 })
   username: string | null;
@@ -83,7 +83,7 @@ export class User001mb {
 
   setProperties(userDTO: UserDTO) {
     this.personId = userDTO.personId;
-    this.domain = userDTO.domain;
+    // this.domain = userDTO.domain;
     this.username = userDTO.username;
     this.firstname = userDTO.firstname;
     this.lastname = userDTO.lastname;

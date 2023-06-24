@@ -20,6 +20,7 @@ export class BookingentryService {
         console.log("bookingentryDTO---service", bookingentryDTO);
         const bookingentry001mb = new Bookingentry001mb();
         bookingentry001mb.setProperties(bookingentryDTO);
+        
         return this.bookingentryRepository.save(bookingentry001mb);
     }
 
