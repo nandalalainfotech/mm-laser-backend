@@ -13,8 +13,7 @@ export class DoctormasterController {
     @UseGuards(JwtAuthGuard)
     @Post("save")
     create(@Body() doctormasterDTO: DoctormasterDTO): Promise<Doctormaster001mb> {
-        console.log("DoctormasterDTO" ,doctormasterDTO);
-        
+
         return this.doctormasterService.create(doctormasterDTO);
     }
 
@@ -31,7 +30,7 @@ export class DoctormasterController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get(": id")
+    @Get(":id")
     findOne(@Param("id") id: number): Promise<Doctormaster001mb> {
         return this.doctormasterService.findOne(id);
     }

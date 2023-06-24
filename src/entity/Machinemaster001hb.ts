@@ -24,6 +24,7 @@ export class Machinemaster001hb {
   @Column("datetime", { name: "updated_datetime", nullable: true })
   updatedDatetime: Date | null;
 
+
   setProperties(machinemasterDTO: MachinemasterDTO) {
     this.slNo = machinemasterDTO.slNo;
     this.machinename = machinemasterDTO.machinename;

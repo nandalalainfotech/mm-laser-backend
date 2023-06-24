@@ -1,7 +1,7 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { MachinemasterDTO } from "src/dto/Machinemaster.dto";
-import { Bookingentry001mb } from "./Bookingentry001mb";
 import { Bookingentry001hb } from "./Bookingentry001hb";
+import { Bookingentry001mb } from "./Bookingentry001mb";
+import { MachinemasterDTO } from "src/dto/Machinemaster.dto";
 
 @Entity("machinemaster001mb", { schema: "erpnextgeneration5" })
 export class Machinemaster001mb {

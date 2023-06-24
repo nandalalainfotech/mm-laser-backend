@@ -11,10 +11,9 @@ export class MachinemasterController {
     constructor(private readonly machinemasterService: MachinemasterService) { }
 
 
-    // @UseGuards(JwtAuthGuard)
+    // @UseGuards(JwtAuthGuard)machinemaster
     @Post("save")
     create(@Body() machinemasterDTO: MachinemasterDTO): Promise<Machinemaster001mb> {
-        console.log("machinemasterDTO", machinemasterDTO);
         return this.machinemasterService.create(machinemasterDTO);
     }
 
