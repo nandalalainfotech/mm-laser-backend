@@ -48,6 +48,7 @@ export class Doctormaster001hb {
   @Column("datetime", { name: "updated_datetime", nullable: true })
   updatedDatetime: Date | null;
 
+
   setProperties(doctormasterDTO: DoctormasterDTO) {
     this.slNo = doctormasterDTO.slNo;
     this.doctorname = doctormasterDTO.doctorname;

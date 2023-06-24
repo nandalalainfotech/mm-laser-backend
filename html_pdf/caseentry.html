@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        table,
+
+        th {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid black;
+
+        }
+
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            /* text-align: justify; */
+            font-size: 20;
+        }
+
+        .invo {
+            border: 2px solid black;
+            margin: 50px;
+            padding: 50px;
+        }
+
+        .pagebreak {
+            page-break-before: always;
+            page-break-before: avoid;
+        }
+
+        /* .even {
+            page-break-before: always;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="invo">
+        {{#each cEntry}}
+        <div style="text-align: center;">
+            <h3 style="text-decoration: underline;">MM LASER</h3>
+            <p>4/191 North Street</p>
+            <p>Palam Colony</p>
+            <p>New Delhi -110045</p>
+            <p>GSTIN-5983734</p>
+        </div>
+        <table style="border: none; width: 95%;margin-left: 30px;">
+            <tr>
+                <td style="text-align: left; border-style: none;">To,</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; border-style: none;">{{this.hospname2.hospitalname}}</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; border-style: none;">H-234 Sai Nagar,</th>
+            </tr>
+            <tr>
+                <td style="text-align: left; border-style: none;" colspan="2">New Delhi -110045</td>
+                <td colspan="8" style="border-style: none;"></td>
+                <td style="text-align: right; border-style: none;" colspan="2">Invoice No:53/2017-18</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; border-style: none;" colspan="2">GSTIN-5983734</td>
+                <td colspan="8" style="border-style: none;"></td>
+                <td style="text-align: right; border-style: none;" colspan="2">Date : 13-06-2023</td>
+            </tr>
+        </table>
+        <table class="pagebreak" style="border: 1px solid black;width: 95%; margin-top: 20px; margin-left: 30px;">
+            <tr>
+                <th>s.No</th>
+                <th>Machine Names</th>
+                <th>Total Cases</th>
+                <th>Charges</th>
+                <th>Amount</th>
+            </tr>
+
+            <tr class="even">
+                <th style="height: 50px; font-weight: 100;">1</th>
+                <th style="height: 50px; font-weight: 100;">{{#each ../casemachine}}
+                    <span>
+                        <br />
+                        {{this.mname}}
+                        <br />
+                    </span>
+                    {{/each}}
+                </th>
+                <th style="height: 50px; font-weight: 100; border-top-style: none;">
+                    {{../caselist}}</th>
+                <th style="height: 50px; font-weight: 100; border-top-style: none;">
+                    {{this.charge}}</th>
+                <th style="height: 50px; font-weight: 100; border-top-style: none;">
+                    {{../total}}</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th style="height: 50px;">Total Amount</th>
+                <th style="height: 50px; font-weight: 100;">{{../total}}</th>
+            </tr>
+            <!-- <tr>
+                <th></th>
+                <th></th>
+            </tr> -->
+
+            <br><br>
+        </table>
+        <table style="border: none; width: 95%; margin-top: 20px;margin-left: 30px;">
+            <tr>
+                <td colspan="2" style="text-align: left; font-weight: 600; border-style: none;">Authorized Signatory
+                </td>
+                <td colspan="10" style="border-style: none;"></td>
+            </tr>
+        </table>
+    </div>
+    {{/each}}
+
+
+</body>
+
+</html>

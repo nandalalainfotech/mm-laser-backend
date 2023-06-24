@@ -166,6 +166,8 @@ import { UpdateBankModule } from './module/updatebank.module';
 import { UserModule } from './module/user.module';
 import { WareHouseModule } from './module/ware-house.module';
 import { WorkStationModule } from './module/work-station.module';
+import { CaseentryModule } from './module/caseentry.module';
+import { CasemachineModule } from './module/casemachine.module';
 
 
 @Module({
@@ -361,7 +363,9 @@ import { WorkStationModule } from './module/work-station.module';
         MachinemasterModule,
         DoctormasterModule,
         EmployeemasterModule,
-        BookingentryModule
+        BookingentryModule,
+        CaseentryModule,
+        CasemachineModule,
     ],
 
 

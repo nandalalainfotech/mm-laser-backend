@@ -1,6 +1,8 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Bookingentry001hb } from "./Bookingentry001hb";
 import { Bookingentry001mb } from "./Bookingentry001mb";
+import { Caseentry001hb } from "./Caseentry001hb";
+import { Caseentry001mb } from "./Caseentry001mb";
 import { DoctormasterDTO } from "src/dto/Doctormaster.dto";
 
 @Entity("doctormaster001mb", { schema: "erpnextgeneration5" })
@@ -61,6 +63,27 @@ export class Doctormaster001mb {
     (bookingentry001mb) => bookingentry001mb.dslno2
   )
   bookingentry001mbs: Bookingentry001mb[];
+
+  @OneToMany(
+    () => Caseentry001hb,
+    (caseentry001hb) => caseentry001hb.doctorname2
+  )
+  caseentry001hbs: Caseentry001hb[];
+
+  @OneToMany(() => Caseentry001hb, (caseentry001hb) => caseentry001hb.hospname2)
+  caseentry001hbs2: Caseentry001hb[];
+
+  @OneToMany(
+    () => Caseentry001mb,
+    (caseentry001mb) => caseentry001mb.doctorname2
+  )
+  caseentry001mbs: Caseentry001mb[];
+
+  @OneToMany(() => Caseentry001mb, (caseentry001mb) => caseentry001mb.hospname2)
+  caseentry001mbs2: Caseentry001mb[];
+
+
+
 
   setProperties(doctormasterDTO: DoctormasterDTO) {
     this.slNo = doctormasterDTO.slNo;
