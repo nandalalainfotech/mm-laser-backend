@@ -17,7 +17,7 @@ export class EmployeemasterDTO extends BaseDTO {
     mobilenumber: string | null;
 
     @IsNotEmpty()
-    status: string | null;
+    status: boolean;
 
     setProperties(employeemaster001mb: Employeemaster001mb) {
         this.employeeId = employeemaster001mb.employeeId

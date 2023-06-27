@@ -9,8 +9,8 @@ export class Machinemaster001hb {
   @Column("varchar", { name: "machinename", nullable: true, length: 255 })
   machinename: string | null;
 
-  @Column("varchar", { name: "status", nullable: true, length: 255 })
-  status: string | null;
+  @Column("tinyint", { name: "status", width: 1 })
+  status: boolean;
 
   @Column("varchar", { name: "insert_user", nullable: true, length: 40 })
   insertUser: string | null;

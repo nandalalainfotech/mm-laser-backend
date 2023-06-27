@@ -35,7 +35,7 @@ export class DoctormasterDTO extends BaseDTO {
     contactnumber: string | null;
 
     @IsNotEmpty()
-    status: string;
+    status: boolean;
 
     setProperties(doctormaster001mb: Doctormaster001mb) {
         this.slNo = doctormaster001mb.slNo;

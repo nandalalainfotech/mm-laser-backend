@@ -28,7 +28,7 @@ export class DoctormasterService {
     }
 
     async findAll(): Promise<Doctormaster001mb[]> {
-        return this.doctormasterRepository.find();
+        return this.doctormasterRepository.find({ order: { slNo: "DESC" } });
     }
 
     findOne(id: number): Promise<Doctormaster001mb> {

@@ -32,7 +32,7 @@ export class MachinemasterService {
 
     async findAll(): Promise<Machinemaster001mb[]> {
         // return this.departmentsRepository.find();
-        return this.machinemasterRepository.find();
+        return this.machinemasterRepository.find({ order: { slNo: "DESC" } });
     }
 
 

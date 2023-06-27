@@ -1,3 +1,4 @@
+import { BookingentryDTO } from "src/dto/Bookingentry.dto";
 import {
   Column,
   Entity,
@@ -6,9 +7,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Machinemaster001mb } from "./Machinemaster001mb";
 import { Doctormaster001mb } from "./Doctormaster001mb";
-import { BookingentryDTO } from "src/dto/Bookingentry.dto";
+import { Machinemaster001mb } from "./Machinemaster001mb";
 
 @Index("mslno", ["mslno"], {})
 @Index("dslno", ["dslno"], {})
@@ -44,11 +44,8 @@ export class Bookingentry001hb {
   @Column("datetime", { name: "updated_datetime", nullable: true })
   updatedDatetime: Date | null;
 
-  @Column("time", { name: "endtime", nullable: true })
-  endtime: string | null;
-
-  @Column("time", { name: "starttime", nullable: true })
-  starttime: string | null;
+  @Column("time", { name: "time", nullable: true })
+  time: string | null;
 
   @ManyToOne(
     () => Machinemaster001mb,
@@ -65,24 +62,15 @@ export class Bookingentry001hb {
   )
   @JoinColumn([{ name: "dslno", referencedColumnName: "slNo" }])
   dslno2: Doctormaster001mb;
-  
+
+
   setProperties(bookingentryDTO: BookingentryDTO) {
     this.bookingId = bookingentryDTO.bookingId;
     this.mslno = bookingentryDTO.mslno;
     this.dslno = bookingentryDTO.dslno;
     this.staff = bookingentryDTO.staff;
-    // this.days = bookingentryDTO.days;
     this.date = bookingentryDTO.date;
-    // this.starttime = bookingentryDTO.starttime;
-    let starttime = new Date (bookingentryDTO.starttime);
-    // console.log("starttime", starttime);
-    this.starttime = starttime.getHours() + ":" + starttime.getMinutes();
-    // console.log("After", this.starttime);
-    // this.endtime = bookingentryDTO.endtime;
-    let endtime = new Date(bookingentryDTO.endtime);
-    console.log("endtime", endtime);
-    this.endtime = endtime.getHours() + ":" + endtime.getMinutes();
-    console.log("After", this.endtime);
+    this.time = bookingentryDTO.time;
     this.hospital = bookingentryDTO.hospital;
     this.insertUser = bookingentryDTO.insertUser;
     this.insertDatetime = bookingentryDTO.insertDatetime;
