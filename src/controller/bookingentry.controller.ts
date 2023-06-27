@@ -11,16 +11,18 @@ export class BookingentryController {
     constructor(private readonly bookingentryService: BookingentryService) { }
 
 
-    // @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard)
     @Post("save")
     create(@Body() bookingentryDTO: BookingentryDTO): Promise<Bookingentry001mb> {
-        console.log("bookingentryDTO", bookingentryDTO);
+        // console.log("bookingentryDTO", bookingentryDTO);
         return this.bookingentryService.create(bookingentryDTO);
     }
 
     @UseGuards(JwtAuthGuard)
     @Put("update")
     update(@Body() bookingentryDTO: BookingentryDTO): Promise<Bookingentry001mb> {
+        // console.log("bookingentryDTO---->>", bookingentryDTO);
+
         return this.bookingentryService.update(bookingentryDTO);
     }
 
@@ -33,9 +35,10 @@ export class BookingentryController {
     @UseGuards(JwtAuthGuard)
     @Get(':id')
     findOne(@Param('id') id: string): Promise<BookingentryDTO> {
+        console.log("id-------->", id);
+
         return this.bookingentryService.findOne(id);
     }
-
     @UseGuards(JwtAuthGuard)
     @Delete('delete/:id')
     remove(@Param('id') id: string): Promise<void> {

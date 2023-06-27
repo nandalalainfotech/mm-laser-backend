@@ -1,4 +1,4 @@
-import { Injectable, Req, Res } from '@nestjs/common';
+import { Injectable, Res } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Response } from "express";
 import * as fs from 'fs';
@@ -7,7 +7,6 @@ import { CaseentryDTO } from 'src/dto/Caseentry.dto';
 import { Caseentry001hb } from 'src/entity/Caseentry001hb';
 import { Caseentry001mb } from 'src/entity/Caseentry001mb';
 import { Casemachine001wb } from 'src/entity/Casemachine001wb';
-import { Request } from "supertest";
 import { Repository } from "typeorm";
 var pdf = require("pdf-creator-node");
 
@@ -24,7 +23,6 @@ export class CaseentryService {
         let casemachine001wbs: Casemachine001wb[] = [];
         for (let i = 0; i < caseentryDTO.Casemachine001wbs.length; i++) {
             const casemachine001wb = new Casemachine001wb();
-            // casemachine001wb.cslno = caseentryDTO.caseentryId;
             casemachine001wb.mname = caseentryDTO.Casemachine001wbs[i].mname
             casemachine001wb.numofcase = caseentryDTO.Casemachine001wbs[i].numofcase
             casemachine001wb.insertUser = caseentryDTO.insertUser;
@@ -41,25 +39,19 @@ export class CaseentryService {
             await this.caseentryRepository.save(caseentry001mb);
             return caseentry001mb;
         } else {
-            // throw new HttpException('Please Add Item Details', HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     async update(caseentryDTO: CaseentryDTO): Promise<Caseentry001mb> {
         let arr
         for (let i = 0; i < caseentryDTO.Casemachine001wbs.length; i++) {
-            // console.log("caseentryDTO=======", caseentryDTO);
-
             if (caseentryDTO.Casemachine001wbs[i].slno) {
                 arr = await this.casemachineRepository.find({ where: { cslno: caseentryDTO.Casemachine001wbs[i].cslno } });
             } else {
                 const casemachine001wb = new Casemachine001wb();
-                // console.log('casemachine001wb-------222222', casemachine001wb);
-                // console.log("caseentryDTO22222=======", caseentryDTO);
                 casemachine001wb.cslno = caseentryDTO.caseentryId;
                 casemachine001wb.mname = caseentryDTO.Casemachine001wbs[i].mname;
                 casemachine001wb.numofcase = caseentryDTO.Casemachine001wbs[i].numofcase;
-                // console.log('casemachine001wb-------333333', casemachine001wb);
                 casemachine001wb.insertUser = caseentryDTO.insertUser;
                 casemachine001wb.insertDatetime = caseentryDTO.insertDatetime;
                 await this.casemachineRepository.save(
@@ -89,7 +81,7 @@ export class CaseentryService {
     }
 
     async findAll(): Promise<Caseentry001mb[]> {
-        return this.caseentryRepository.find({ relations: ['doctorname2', 'hospname2', "casemachine001wbs"] });
+        return this.caseentryRepository.find({ order: { caseentryId: "DESC" }, relations: ['doctorname2', 'hospname2', "casemachine001wbs"] });
     }
 
     findOne(id: string): Promise<Caseentry001mb> {
@@ -125,7 +117,6 @@ export class CaseentryService {
                 console.log("purchaslip[i].casemachine001wbs", purchaslip[i].casemachine001wbs[j]);
                 cases += parseInt(purchaslip[i].casemachine001wbs[j].numofcase)
                 casemachineitems.push(purchaslip[i].casemachine001wbs[j]);
-                // totoal = parseInt((purchaslip[i].charge * 1) * (purchaslip[i].casemachine001wbs[j].numofcase * 1))
             }
 
         }
@@ -135,7 +126,6 @@ export class CaseentryService {
 
 
         var html = fs.readFileSync("./html_pdf/caseentry.html", "utf8");
-        // let caseEentry: any[] = await this.caseentryRepository.find();
 
         var document = {
             html: html,

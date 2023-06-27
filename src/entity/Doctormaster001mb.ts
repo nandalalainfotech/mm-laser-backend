@@ -31,8 +31,8 @@ export class Doctormaster001mb {
   @Column("varchar", { name: "emailid", length: 40 })
   emailid: string;
 
-  @Column("varchar", { name: "status", length: 50 })
-  status: string;
+  @Column("tinyint", { name: "status", width: 1 })
+  status: boolean;
 
   @Column("varchar", { name: "hospitalname", length: 40 })
   hospitalname: string;
@@ -81,9 +81,6 @@ export class Doctormaster001mb {
 
   @OneToMany(() => Caseentry001mb, (caseentry001mb) => caseentry001mb.hospname2)
   caseentry001mbs2: Caseentry001mb[];
-
-
-
 
   setProperties(doctormasterDTO: DoctormasterDTO) {
     this.slNo = doctormasterDTO.slNo;
