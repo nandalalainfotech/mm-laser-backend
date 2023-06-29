@@ -25,6 +25,9 @@ export class Doctormaster001mb {
   @Column("varchar", { name: "state", length: 50 })
   state: string;
 
+  @Column("varchar", { name: "region", nullable: true, length: 255 })
+  region: string | null;
+
   @Column("varchar", { name: "contactnumber", nullable: true, length: 15 })
   contactnumber: string | null;
 
@@ -89,6 +92,7 @@ export class Doctormaster001mb {
     this.addressline2 = doctormasterDTO.addressline2;
     this.city = doctormasterDTO.city;
     this.state = doctormasterDTO.state;
+    this.region = doctormasterDTO.region;
     this.hospitalname = doctormasterDTO.hospitalname;
     this.emailid = doctormasterDTO.emailid;
     this.pincode = doctormasterDTO.pincode;

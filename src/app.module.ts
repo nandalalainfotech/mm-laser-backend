@@ -168,6 +168,7 @@ import { WareHouseModule } from './module/ware-house.module';
 import { WorkStationModule } from './module/work-station.module';
 import { CaseentryModule } from './module/caseentry.module';
 import { CasemachineModule } from './module/casemachine.module';
+import { RegionmasterModule } from './module/regionmaster.module';
 
 
 @Module({
@@ -366,6 +367,7 @@ import { CasemachineModule } from './module/casemachine.module';
         BookingentryModule,
         CaseentryModule,
         CasemachineModule,
+        RegionmasterModule
     ],
 
 
