@@ -19,32 +19,35 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@nestjs-modules/mailer": "1.6.0",
+    "@nestjs-modules/mailer": "^1.6.0",
     "@nestjs/common": "7.6.15",
-    "@nestjs/config": "1.0.1",
+    "@nestjs/config": "^1.0.1",
     "@nestjs/core": "7.6.15",
     "@nestjs/jwt": "^8.0.0",
     "@nestjs/passport": "^8.0.1",
     "@nestjs/platform-express": "7.6.15",
     "@nestjs/typeorm": "7.1.5",
     "@types/jest": "27.0.1",
+    "@types/nodemailer": "^6.4.8",
     "bcrypt": "5.0.1",
     "class-transformer": "0.4.0",
     "class-validator": "0.13.1",
+    "dotenv": "^16.3.1",
     "dynamic-html-pdf": "^1.0.4",
     "es6-shim": "0.35.6",
     "exceljs": "^4.3.0",
     "file-saver": "^2.0.5",
-    "handlebars": "4.7.7",
+    "handlebars": "^4.7.7",
     "mysql2": "^3.2.0",
-    "nodemailer": "6.6.3",
+    "nodemailer": "^6.6.3",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "pdf-creator-node": "^2.3.4",
+    "pdf-creator-node": "^2.2.4",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
     "rxjs": "6.6.7",
+    "sib-api-v3-sdk": "^8.5.0",
     "typeorm": "0.2.32",
     "typeorm-naming-strategies": "2.0.0",
     "typeorm-snake-naming-strategy": "1.0.2"
@@ -75,5 +78,16 @@
     "ts-node": "9.1.1",
     "tsconfig-paths": "3.9.0",
     "typescript": "4.2.4"
-  }
+  },
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nandalalainfotech/mm-laser-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/nandalalainfotech/mm-laser-backend/issues"
+  },
+  "homepage": "https://github.com/nandalalainfotech/mm-laser-backend#readme"
 }

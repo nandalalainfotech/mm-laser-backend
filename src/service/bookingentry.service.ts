@@ -19,7 +19,7 @@ export class BookingentryService {
         @InjectRepository(Bookingentry001hb) private readonly bookingentryhbRepository: Repository<Bookingentry001hb>) { }
 
     async create(bookingentryDTO: BookingentryDTO): Promise<Bookingentry001mb> {
-        console.log("bookingentryDTO", bookingentryDTO);
+        // console.log("bookingentryDTO", bookingentryDTO);
 
         let starttime = new Date(bookingentryDTO.time);
         bookingentryDTO.time = starttime.getHours() + ":" + starttime.getMinutes() + ":" + starttime.getSeconds();

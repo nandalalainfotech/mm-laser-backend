@@ -1,6 +1,6 @@
-import { ApplanguagesettingDTO } from "../dto/Applanguagesetting.dto";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { User001mb } from "./User001mb";
+import { ApplanguagesettingDTO } from "src/dto/Applanguagesetting.dto";
 
 @Entity("applanguagesetting001mb", { schema: "erpnextgeneration5" })
 export class Applanguagesetting001mb {
@@ -31,6 +31,8 @@ export class Applanguagesetting001mb {
   @OneToMany(() => User001mb, (user001mb) => user001mb.language2)
   user001mbs: User001mb[];
 
+
+
   setProperties(applanguagesettingDTO: ApplanguagesettingDTO) {
     this.id = applanguagesettingDTO.id;
     this.name = applanguagesettingDTO.name;
@@ -40,5 +42,5 @@ export class Applanguagesetting001mb {
     this.insertDatetime = applanguagesettingDTO.insertDatetime;
     this.updatedUser = applanguagesettingDTO.updatedUser;
     this.updatedDatetime = applanguagesettingDTO.updatedDatetime;
-}
+  }
 }

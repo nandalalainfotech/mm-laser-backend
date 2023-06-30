@@ -36,7 +36,7 @@ export class AuthService {
 				userDTO.setProperties(user001mb);
 				userDTO.language2 = applang;
 				userDTO.password = null;
-				return this.generateJwt(user001mb.username,  user001mb.securityquestion, user001mb.securityanswer,user001mb.status).pipe(map((jwt: string) => {
+				return this.generateJwt(user001mb.username, user001mb.securityquestion, user001mb.securityanswer, user001mb.status).pipe(map((jwt: string) => {
 					return { userDTO, access_token: jwt };
 				})
 				)

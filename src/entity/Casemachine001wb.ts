@@ -24,6 +24,9 @@ export class Casemachine001wb {
     @Column("varchar", { name: "numofcase", length: 40 })
     numofcase: string;
 
+    @Column("varchar", { name: "charge", length: 40 })
+    charge: string;
+
     @Column("varchar", { name: "insert_user", length: 40 })
     insertUser: string;
 
@@ -44,11 +47,13 @@ export class Casemachine001wb {
     @JoinColumn([{ name: "cslno", referencedColumnName: "caseentryId" }])
     cslno2: Caseentry001mb;
 
+
     setProperties(casemachineDTO: CasemachineDTO) {
         this.slno = casemachineDTO.slno;
         this.numofcase = casemachineDTO.numofcase;
         this.cslno = casemachineDTO.cslno;
         this.mname = casemachineDTO.mname;
+        this.charge = casemachineDTO.charge;
         this.insertUser = casemachineDTO.insertUser;
         this.insertDatetime = casemachineDTO.insertDatetime;
         this.updatedUser = casemachineDTO.updatedUser;

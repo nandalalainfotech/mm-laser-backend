@@ -9,6 +9,8 @@ export class AuthController {
 
 	@Get('getUserAuthentication/:username/:password/')
 	getUserAuthentication(@Param('username') username: string, @Param('password') password: string): Promise<any> {
+
+
 		return this.AuthService.getUserAuthentication(username, password);
 	}
 

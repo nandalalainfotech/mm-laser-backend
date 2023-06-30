@@ -1,14 +1,11 @@
-import { UserDTO } from "../dto/User.dto";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Role001hb } from "./Role001hb";
+import { UserDTO } from "src/dto/User.dto";
 
 @Entity("user001hb", { schema: "erpnextgeneration5" })
 export class User001hb {
   @PrimaryGeneratedColumn({ type: "int", name: "person_id" })
   personId: number;
-
-  // @Column("varchar", { name: "domain", nullable: true, length: 40 })
-  // domain: string | null;
 
   @Column("varchar", { name: "username", nullable: true, length: 40 })
   username: string | null;
@@ -24,6 +21,9 @@ export class User001hb {
 
   @Column("varchar", { name: "email", nullable: true, length: 250 })
   email: string | null;
+
+  // @Column("varchar", { name: "role", nullable: true, length: 250 })
+  // role: string | null;
 
   @Column("varchar", { name: "filename", nullable: true, length: 255 })
   filename: string | null;
@@ -63,6 +63,7 @@ export class User001hb {
   @OneToMany(() => Role001hb, (role001hb) => role001hb.rl)
   role001hbs: Role001hb[];
 
+
   setProperties(userDTO: UserDTO) {
     this.personId = userDTO.personId;
     // this.domain = userDTO.domain;
@@ -73,6 +74,7 @@ export class User001hb {
     this.password = userDTO.password;
     this.status = userDTO.status;
     this.email = userDTO.email;
+    // this.role = userDTO.role;
     this.securityquestion = userDTO.securityquestion;
     this.securityanswer = userDTO.securityanswer;
     this.theme = userDTO.theme;
@@ -80,5 +82,5 @@ export class User001hb {
     this.insertDatetime = userDTO.insertDatetime;
     this.updatedUser = userDTO.updatedUser;
     this.updatedDatetime = userDTO.updatedDatetime;
-}
+  }
 }
