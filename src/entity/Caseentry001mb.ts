@@ -25,11 +25,8 @@ export class Caseentry001mb {
   @Column("int", { name: "hospname" })
   hospname: number;
 
-  @Column("varchar", { name: "charge", length: 200 })
-  charge: string;
-
-  @Column("varchar", { name: "status", nullable: true, length: 255 })
-  status: string | null;
+  @Column("tinyint", { name: "status", width: 1 })
+  status: boolean;
 
   @Column("varchar", { name: "insert_user", length: 40 })
   insertUser: string;
@@ -71,11 +68,11 @@ export class Caseentry001mb {
   )
   casemachine001wbs: Casemachine001wb[];
 
+
   setProperties(caseentryDTO: CaseentryDTO) {
     this.caseentryId = caseentryDTO.caseentryId;
     this.doctorname = caseentryDTO.doctorname;
     this.hospname = caseentryDTO.hospname;
-    this.charge = caseentryDTO.charge;
     this.status = caseentryDTO.status;
     this.insertUser = caseentryDTO.insertUser;
     this.insertDatetime = caseentryDTO.insertDatetime;

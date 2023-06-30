@@ -9,14 +9,15 @@ export class UserDTO extends BaseDTO {
     password: string;
     status: string;
     email: string;
+    // role: string;
     securityquestion: string;
     securityanswer: string;
     theme: string | null;
     lastname: string | null;
     firstname: string | null;
     language: number | null;
-    language2 : ApplanguagesettingDTO;
-   
+    language2: ApplanguagesettingDTO;
+
 
     setProperties(user001mb: User001mb) {
         this.personId = user001mb.personId;

@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from "@nes
 import { JwtAuthGuard } from "../auth/jwt-auth.guard";
 import { RoleDTO } from "../dto/Role.dto";
 import { Role001mb } from "../entity/Role001mb";
-import { RoleService } from "src/service/role.service";
+import { RoleService } from "src/service/Role.service";
 
 @Controller('/testandreportstudio/api/role')
 export class RoleController {
