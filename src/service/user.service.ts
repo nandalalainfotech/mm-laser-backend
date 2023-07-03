@@ -22,13 +22,14 @@ export class UserService {
         return this.userRepository.save(user001mb);
     }
     async create(userDTO: UserDTO,): Promise<User001mb> {
-        console.log("userDTO-->", userDTO);
         var user001mb = new User001mb();
         user001mb.setProperties(userDTO);
         user001mb.password = "erpnext001";
          const hash = await bcrypt.hash(user001mb.password, this.saltRounds);
          user001mb.password = hash;
-        return this.userRepository.save(user001mb);
+        await this.userRepository.save(user001mb);
+        await this.mailService.sendUserConfirmation(user001mb);
+        return user001mb;
     }
     async updatePassword(userDTO: UserDTO): Promise<User001mb> {
         const hash = await bcrypt.hash(userDTO.password, this.saltRounds);
