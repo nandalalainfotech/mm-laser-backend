@@ -98,7 +98,6 @@ export class UserController {
 	@UseGuards(JwtAuthGuard)
 	@Post("save")
 	create(@Body() userDTO: UserDTO): Promise<User001mb> {
-		console.log("User001mb-->", User001mb);
 		return this.userService.create(userDTO)
 	}
 
