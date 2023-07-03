@@ -8,10 +8,11 @@ import { User001mb } from '../entity/User001mb';
 import { ApplanguagesettingModule } from '../module/applanguagesetting.module';
 import { JwtStrategy } from './jwt.strategy';
 import { AuthService } from './services/auth.service';
+import { Role001mb } from 'src/entity/Role001mb';
 
 @Module({
     imports: [
-        TypeOrmModule.forFeature([User001mb, Applanguagesetting001mb]),
+        TypeOrmModule.forFeature([User001mb, Applanguagesetting001mb,Role001mb]),
         JwtModule.registerAsync({
             imports: [ConfigModule,
             ApplanguagesettingModule], // Missing this

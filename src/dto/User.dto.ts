@@ -1,6 +1,7 @@
 import { User001mb } from "../entity/User001mb";
 import { BaseDTO } from "./Base.dto";
 import { ApplanguagesettingDTO } from "./Applanguagesetting.dto";
+import { Role001mb } from "src/entity/Role001mb";
 
 export class UserDTO extends BaseDTO {
     personId: number;
@@ -17,7 +18,7 @@ export class UserDTO extends BaseDTO {
     firstname: string | null;
     language: number | null;
     language2: ApplanguagesettingDTO;
-
+    role001mbs: Role001mb | any;
 
     setProperties(user001mb: User001mb) {
         this.personId = user001mb.personId;
@@ -30,6 +31,7 @@ export class UserDTO extends BaseDTO {
         this.status = user001mb.status;
         this.email = user001mb.email;
         this.language2 = user001mb.language2;
+        this.role001mbs = user001mb.role001mbs;
         this.securityquestion = user001mb.securityquestion;
         this.securityanswer = user001mb.securityanswer;
         this.theme = user001mb.theme;
