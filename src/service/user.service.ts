@@ -22,14 +22,13 @@ export class UserService {
         return this.userRepository.save(user001mb);
     }
     async create(userDTO: UserDTO,): Promise<User001mb> {
+        console.log("userDTO-->", userDTO);
         var user001mb = new User001mb();
         user001mb.setProperties(userDTO);
         user001mb.password = "erpnext001";
          const hash = await bcrypt.hash(user001mb.password, this.saltRounds);
          user001mb.password = hash;
-        await this.userRepository.save(user001mb);
-        await this.mailService.sendUserConfirmation(user001mb);
-        return user001mb;
+        return this.userRepository.save(user001mb);
     }
     async updatePassword(userDTO: UserDTO): Promise<User001mb> {
         const hash = await bcrypt.hash(userDTO.password, this.saltRounds);
@@ -63,7 +62,7 @@ export class UserService {
     }
 
     async findAll(): Promise<User001mb[]> {
-        return this.userRepository.find({ relations: ['language2'] });
+        return this.userRepository.find({order: { personId: "DESC" }, relations: ['language2'] });
     }
 
     findOne(id: number): Promise<User001mb> {

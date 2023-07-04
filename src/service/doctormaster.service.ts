@@ -15,7 +15,7 @@ export class DoctormasterService {
 
 
     async create(doctormasterDTO: DoctormasterDTO): Promise<Doctormaster001mb> {
-        console.log("doctormasterDTO---->", doctormasterDTO);
+        // console.log("doctormasterDTO---->", doctormasterDTO);
 
         const doctormaster001mb = new Doctormaster001mb();
         doctormaster001mb.setProperties(doctormasterDTO);
