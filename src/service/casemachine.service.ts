@@ -29,8 +29,13 @@ export class CasemachineService {
         return casemachine001wb;
     }
 
-    async findAll(): Promise<Casemachine001wb[]> {
-        return this.casemachineRepository.find({ relations: ['cslno2'] });
+    async findAll(username: any): Promise<Casemachine001wb[]> {
+        let casemachine001wbs: Casemachine001wb[] = [];
+        casemachine001wbs = await this.casemachineRepository.find({
+            where: { insertUser: username }, relations: ['cslno2']
+        });
+
+        return casemachine001wbs;
     }
 
     findOne(id: string): Promise<Casemachine001wb> {

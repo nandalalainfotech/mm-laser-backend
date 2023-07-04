@@ -10,8 +10,6 @@ const fs = require('fs');
 export class MachinemasterController {
     constructor(private readonly machinemasterService: MachinemasterService) { }
 
-
-    // @UseGuards(JwtAuthGuard)machinemaster
     @Post("save")
     create(@Body() machinemasterDTO: MachinemasterDTO): Promise<Machinemaster001mb> {
         return this.machinemasterService.create(machinemasterDTO);
@@ -24,9 +22,9 @@ export class MachinemasterController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get('findAll')
-    findAll(): Promise<MachinemasterDTO[]> {
-        return this.machinemasterService.findAll();
+    @Get('findAll/:username')
+    findAll(@Param('username') username: any): Promise<MachinemasterDTO[]> {
+        return this.machinemasterService.findAll(username);
     }
 
     @UseGuards(JwtAuthGuard)

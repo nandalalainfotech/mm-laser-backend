@@ -29,9 +29,16 @@ export class DoctormasterService {
         return doctormaster001mb;
     }
 
-    async findAll(): Promise<Doctormaster001mb[]> {
-        return this.doctormasterRepository.find({ order: { slNo: "DESC" } });
+
+    async findAll(username: any): Promise<Doctormaster001mb[]> {
+        let doctormaster001mbs: Doctormaster001mb[] = [];
+        doctormaster001mbs = await this.doctormasterRepository.find({
+            where: { insertUser: username }, order: { slNo: "DESC" }
+        });
+
+        return doctormaster001mbs;
     }
+
 
     findOne(id: number): Promise<Doctormaster001mb> {
         return this.doctormasterRepository.findOne(id);

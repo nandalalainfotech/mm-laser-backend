@@ -45,8 +45,12 @@ export class BookingentryService {
         return bookingentry001mb;
     }
 
-    async findAll(): Promise<Bookingentry001mb[]> {
-        return this.bookingentryRepository.find({ order: { bookingId: "DESC" }, relations: ['mslno2', 'dslno2'] });
+    async findAll(username: any): Promise<Bookingentry001mb[]> {
+        let bookingentry001mbs: Bookingentry001mb[] = [];
+        bookingentry001mbs = await this.bookingentryRepository.find({
+            where: { insertUser: username }, order: { bookingId: "DESC" }, relations: ['mslno2', 'dslno2']
+        });
+        return bookingentry001mbs;
     }
 
     findOne(id: string): Promise<Bookingentry001mb> {

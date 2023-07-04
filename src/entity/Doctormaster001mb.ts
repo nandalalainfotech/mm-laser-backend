@@ -34,6 +34,9 @@ export class Doctormaster001mb {
   @Column("tinyint", { name: "status", width: 1 })
   status: boolean;
 
+  @Column("varchar", { name: "region", length: 40 })
+  region: string;
+
   @Column("varchar", { name: "hospitalname", length: 40 })
   hospitalname: string;
 
@@ -89,6 +92,7 @@ export class Doctormaster001mb {
     this.addressline2 = doctormasterDTO.addressline2;
     this.city = doctormasterDTO.city;
     this.state = doctormasterDTO.state;
+    this.region = doctormasterDTO.region;
     this.hospitalname = doctormasterDTO.hospitalname;
     this.emailid = doctormasterDTO.emailid;
     this.pincode = doctormasterDTO.pincode;

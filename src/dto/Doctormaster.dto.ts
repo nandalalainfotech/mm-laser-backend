@@ -23,6 +23,9 @@ export class DoctormasterDTO extends BaseDTO {
     state: string;
 
     @IsNotEmpty()
+    region: string;
+
+    @IsNotEmpty()
     hospitalname: string;
 
     @IsNotEmpty()
@@ -46,6 +49,7 @@ export class DoctormasterDTO extends BaseDTO {
         this.state = doctormaster001mb.state;
         this.hospitalname = doctormaster001mb.hospitalname;
         this.emailid = doctormaster001mb.emailid;
+        this.region = doctormaster001mb.region;
         this.pincode = doctormaster001mb.pincode;
         this.contactnumber = doctormaster001mb.contactnumber;
         this.status = doctormaster001mb.status;

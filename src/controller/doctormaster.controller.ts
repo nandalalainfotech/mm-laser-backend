@@ -24,9 +24,9 @@ export class DoctormasterController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get("findAll")
-    findAll(): Promise<Doctormaster001mb[]> {
-        return this.doctormasterService.findAll();
+    @Get("findAll/:username")
+    findAll(@Param('username') username: any): Promise<Doctormaster001mb[]> {
+        return this.doctormasterService.findAll(username);
     }
 
     @UseGuards(JwtAuthGuard)

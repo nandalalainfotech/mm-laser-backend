@@ -27,8 +27,13 @@ export class
         return employeemaster001mb;
     }
 
-    async findAll(): Promise<Employeemaster001mb[]> {
-        return this.employeemasterRepository.find({ order: { employeeId: "DESC" } });
+    async findAll(username: any): Promise<Employeemaster001mb[]> {
+        let employeemaster001mbs: Employeemaster001mb[] = [];
+        employeemaster001mbs = await this.employeemasterRepository.find({
+            where: { insertUser: username }, order: { employeeId: "DESC" }
+        });
+
+        return employeemaster001mbs;
     }
 
     findOne(id: string): Promise<Employeemaster001mb> {
