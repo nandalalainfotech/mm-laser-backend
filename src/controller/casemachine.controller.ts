@@ -25,9 +25,9 @@ export class CaseMachineController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get('findAll')
-    findAll(): Promise<CasemachineDTO[]> {
-        return this.casemachineService.findAll();
+    @Get('findAll/:username')
+    findAll(@Param('username') username: string): Promise<CasemachineDTO[]> {
+        return this.casemachineService.findAll(username);
     }
 
     @UseGuards(JwtAuthGuard)

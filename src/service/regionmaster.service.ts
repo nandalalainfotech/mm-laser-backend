@@ -29,9 +29,14 @@ export class RegionmasterService {
         return regionmaster001mb;
     }
 
-    async findAll(): Promise<Regionmaster001mb[]> {
-        // return this.departmentsRepository.find();
-        return this.regionmasterRepository.find({ order: { slNo: "DESC" } });
+
+    async findAll(username: any): Promise<Regionmaster001mb[]> {
+        let regionmaster001mbs: Regionmaster001mb[] = [];
+        regionmaster001mbs = await this.regionmasterRepository.find({
+            where: { insertUser: username }, order: { slNo: "DESC" }
+        });
+
+        return regionmaster001mbs;
     }
 
 

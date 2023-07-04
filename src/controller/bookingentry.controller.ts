@@ -27,16 +27,14 @@ export class BookingentryController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get('findAll')
-    findAll(): Promise<BookingentryDTO[]> {
-        return this.bookingentryService.findAll();
+    @Get('findAll/:username')
+    findAll(@Param('username') username: any): Promise<BookingentryDTO[]> {
+        return this.bookingentryService.findAll(username);
     }
 
     @UseGuards(JwtAuthGuard)
     @Get(':id')
     findOne(@Param('id') id: string): Promise<BookingentryDTO> {
-        console.log("id-------->", id);
-
         return this.bookingentryService.findOne(id);
     }
     @UseGuards(JwtAuthGuard)

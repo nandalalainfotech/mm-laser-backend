@@ -30,9 +30,14 @@ export class MachinemasterService {
         return machinemaster001mb;
     }
 
-    async findAll(): Promise<Machinemaster001mb[]> {
-        // return this.departmentsRepository.find();
-        return this.machinemasterRepository.find({ order: { slNo: "DESC" } });
+    async findAll(username: any): Promise<Machinemaster001mb[]> {
+        let machinemaster001mbs: Machinemaster001mb[] = [];
+        machinemaster001mbs = await this.machinemasterRepository.find({
+            where: { insertUser: username }, order: { slNo: "DESC" }
+        });
+        console.log("machinemaster001mbs", machinemaster001mbs);
+
+        return machinemaster001mbs;
     }
 
 

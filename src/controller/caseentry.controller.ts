@@ -1,10 +1,9 @@
-import { Body, Controller, Delete, Get, Header, Param, Post, Put, Req, Res, UseGuards } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Header, Param, Post, Put, Res, UseGuards } from "@nestjs/common";
+import { Response } from "express";
 import { CaseentryDTO } from "src/dto/Caseentry.dto";
 import { Caseentry001mb } from "src/entity/Caseentry001mb";
 import { CaseentryService } from "src/service/caseentry.service";
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
-import { Response } from "express";
-import { Request } from "supertest";
 var path = require('path');
 const fs = require('fs');
 
@@ -40,9 +39,9 @@ export class CaseentryController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get('findAll')
-    findAll(): Promise<CaseentryDTO[]> {
-        return this.caseentryService.findAll();
+    @Get('findAll/:username')
+    findAll(@Param('username') username: any): Promise<CaseentryDTO[]> {
+        return this.caseentryService.findAll(username);
     }
 
     @UseGuards(JwtAuthGuard)

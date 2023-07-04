@@ -10,8 +10,6 @@ const fs = require('fs');
 export class RegionmasterController {
     constructor(private readonly regionmasterService: RegionmasterService) { }
 
-
-    // @UseGuards(JwtAuthGuard)machinemaster
     @Post("save")
     create(@Body() regionmasterDTO: RegionmasterDTO): Promise<Regionmaster001mb> {
         return this.regionmasterService.create(regionmasterDTO);
@@ -24,9 +22,9 @@ export class RegionmasterController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get('findAll')
-    findAll(): Promise<RegionmasterDTO[]> {
-        return this.regionmasterService.findAll();
+    @Get('findAll/:username')
+    findAll(@Param('username') username: any): Promise<RegionmasterDTO[]> {
+        return this.regionmasterService.findAll(username);
     }
 
     @UseGuards(JwtAuthGuard)

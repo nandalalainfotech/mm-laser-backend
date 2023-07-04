@@ -25,9 +25,9 @@ export class EmployeemasterController {
     }
 
     @UseGuards(JwtAuthGuard)
-    @Get('findAll')
-    findAll(): Promise<Employeemaster001mb[]> {
-        return this.employeemasterService.findAll();
+    @Get('findAll/:username')
+    findAll(@Param('username') username: any): Promise<Employeemaster001mb[]> {
+        return this.employeemasterService.findAll(username);
     }
 
     @UseGuards(JwtAuthGuard)
