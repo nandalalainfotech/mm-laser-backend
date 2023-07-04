@@ -8,7 +8,7 @@ import { Repository } from "typeorm";
 @Injectable()
 export class RoleService {
 	constructor(@InjectRepository(Role001mb) private readonly roleRepository: Repository<Role001mb>,
-	            @InjectRepository(Role001hb) private readonly rolehbRepository: Repository<Role001hb>) { }
+		@InjectRepository(Role001hb) private readonly rolehbRepository: Repository<Role001hb>) { }
 
 	async create(roleDTO: RoleDTO): Promise<Role001mb> {
 		const role001mb = new Role001mb();
@@ -27,7 +27,7 @@ export class RoleService {
 	}
 
 	async findAll(): Promise<Role001mb[]> {
-		return this.roleRepository.find({ relations: ["rl"] });
+		return this.roleRepository.find({ order: { id: "DESC" }, relations: ["rl"] });
 	}
 
 	findOne(id: number): Promise<Role001mb> {
@@ -35,10 +35,10 @@ export class RoleService {
 	}
 
 	async remove(id: number): Promise<void> {
-        let role = this.roleRepository.findOne(id);
-        let role001001hb = new Role001hb();
-        role001001hb.setProperties((await role));
-        this.rolehbRepository.save(role001001hb);
-        await this.roleRepository.delete(id);
-    }
+		let role = this.roleRepository.findOne(id);
+		let role001001hb = new Role001hb();
+		role001001hb.setProperties((await role));
+		this.rolehbRepository.save(role001001hb);
+		await this.roleRepository.delete(id);
+	}
 }
