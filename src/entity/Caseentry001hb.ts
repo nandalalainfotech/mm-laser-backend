@@ -6,21 +6,25 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
+import { Bookingentry001mb } from "./Bookingentry001mb";
 import { Doctormaster001mb } from "./Doctormaster001mb";
 import { CaseentryDTO } from "src/dto/Caseentry.dto";
 
+@Index("appointmentNo", ["appointmentNo"], {})
 @Index("doctorname", ["doctorname"], {})
-@Index("hospname", ["hospname"], {})
 @Entity("caseentry001hb", { schema: "erpnextgeneration5" })
 export class Caseentry001hb {
   @PrimaryGeneratedColumn({ type: "int", name: "caseentryId" })
   caseentryId: number;
 
+  @Column("int", { name: "appointmentNo" })
+  appointmentNo: number;
+
   @Column("int", { name: "doctorname" })
   doctorname: number;
 
-  @Column("int", { name: "hospname" })
-  hospname: number;
+  @Column("varchar", { name: "hospname", length: 40 })
+  hospname: string;
 
   @Column("tinyint", { name: "status", width: 1 })
   status: boolean;
@@ -38,6 +42,14 @@ export class Caseentry001hb {
   updatedDatetime: Date | null;
 
   @ManyToOne(
+    () => Bookingentry001mb,
+    (bookingentry001mb) => bookingentry001mb.caseentry001hbs,
+    { onDelete: "CASCADE", onUpdate: "RESTRICT" }
+  )
+  @JoinColumn([{ name: "appointmentNo", referencedColumnName: "bookingId" }])
+  appointmentNo2: Bookingentry001mb;
+
+  @ManyToOne(
     () => Doctormaster001mb,
     (doctormaster001mb) => doctormaster001mb.caseentry001hbs,
     { onDelete: "CASCADE", onUpdate: "RESTRICT" }
@@ -45,13 +57,6 @@ export class Caseentry001hb {
   @JoinColumn([{ name: "doctorname", referencedColumnName: "slNo" }])
   doctorname2: Doctormaster001mb;
 
-  @ManyToOne(
-    () => Doctormaster001mb,
-    (doctormaster001mb) => doctormaster001mb.caseentry001hbs2,
-    { onDelete: "CASCADE", onUpdate: "RESTRICT" }
-  )
-  @JoinColumn([{ name: "hospname", referencedColumnName: "slNo" }])
-  hospname2: Doctormaster001mb;
 
 
 

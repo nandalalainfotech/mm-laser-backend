@@ -18,14 +18,19 @@ export class UserService {
         @InjectRepository(User001hb) private readonly userhbRepository: Repository<User001hb>){}
         
     async update(userDTO: UserDTO): Promise<User001mb> {
+      
         const user001mb = await this.userRepository.findOne({ where: { personId: userDTO.personId } });
+        user001mb.setProperties(userDTO);
+        user001mb.password = userDTO.password;
+        const hash = await bcrypt.hash(user001mb.password, this.saltRounds);
+        user001mb.password = hash;
         return this.userRepository.save(user001mb);
     }
     async create(userDTO: UserDTO,): Promise<User001mb> {
-        console.log("userDTO-->", userDTO);
+        // console.log("userDTO--------->", userDTO);
         var user001mb = new User001mb();
         user001mb.setProperties(userDTO);
-        user001mb.password = "erpnext001";
+        user001mb.password = userDTO.password;
          const hash = await bcrypt.hash(user001mb.password, this.saltRounds);
          user001mb.password = hash;
         return this.userRepository.save(user001mb);
@@ -51,18 +56,18 @@ export class UserService {
         return this.userRepository.save(user001mb);
     }
 
-    async update2(updateLanguage: any): Promise<User001mb> {
-        const user001mb = await this.userRepository.findOne({ where: { personId: updateLanguage.personId } });
-        user001mb.language = updateLanguage.language;
-        if(user001mb.language == 12){
-            user001mb.language = 5
-            return this.userRepository.save(user001mb);
-         }
-        return this.userRepository.save(user001mb);
-    }
+    // async update2(updateLanguage: any): Promise<User001mb> {
+    //     const user001mb = await this.userRepository.findOne({ where: { personId: updateLanguage.personId } });
+    //     user001mb.language = updateLanguage.language;
+    //     if(user001mb.language == 12){
+    //         user001mb.language = 5
+    //         return this.userRepository.save(user001mb);
+    //      }
+    //     return this.userRepository.save(user001mb);
+    // }
 
     async findAll(): Promise<User001mb[]> {
-        return this.userRepository.find({order: { personId: "DESC" }, relations: ['language2'] });
+        return this.userRepository.find({order: { personId: "DESC" } });
     }
 
     findOne(id: number): Promise<User001mb> {

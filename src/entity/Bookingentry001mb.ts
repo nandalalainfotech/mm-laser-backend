@@ -1,14 +1,17 @@
-import { BookingentryDTO } from "src/dto/Bookingentry.dto";
 import {
   Column,
   Entity,
   Index,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Doctormaster001mb } from "./Doctormaster001mb";
 import { Machinemaster001mb } from "./Machinemaster001mb";
+import { Doctormaster001mb } from "./Doctormaster001mb";
+import { Caseentry001hb } from "./Caseentry001hb";
+import { Caseentry001mb } from "./Caseentry001mb";
+import { BookingentryDTO } from "src/dto/Bookingentry.dto";
 
 @Index("mslno", ["mslno"], {})
 @Index("dslno", ["dslno"], {})
@@ -22,6 +25,9 @@ export class Bookingentry001mb {
 
   @Column("int", { name: "dslno" })
   dslno: number;
+
+  @Column("varchar", { name: "appNo", length: 50 })
+  appNo: string;
 
   @Column("datetime", { name: "date" })
   date: Date;
@@ -63,12 +69,25 @@ export class Bookingentry001mb {
   @JoinColumn([{ name: "dslno", referencedColumnName: "slNo" }])
   dslno2: Doctormaster001mb;
 
+  @OneToMany(
+    () => Caseentry001hb,
+    (caseentry001hb) => caseentry001hb.appointmentNo2
+  )
+  caseentry001hbs: Caseentry001hb[];
+
+  @OneToMany(
+    () => Caseentry001mb,
+    (caseentry001mb) => caseentry001mb.appointmentNo2
+  )
+  caseentry001mbs: Caseentry001mb[];
+
   setProperties(bookingentryDTO: BookingentryDTO) {
     this.bookingId = bookingentryDTO.bookingId;
     this.mslno = bookingentryDTO.mslno;
     this.dslno = bookingentryDTO.dslno;
     this.staff = bookingentryDTO.staff;
     this.date = bookingentryDTO.date;
+    this.appNo = bookingentryDTO.appNo;
     this.time = bookingentryDTO.time;
     this.hospital = bookingentryDTO.hospital;
     this.insertUser = bookingentryDTO.insertUser;

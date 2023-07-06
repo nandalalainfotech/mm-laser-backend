@@ -25,6 +25,9 @@ export class Doctormaster001mb {
   @Column("varchar", { name: "state", length: 50 })
   state: string;
 
+  @Column("varchar", { name: "region", length: 20 })
+  region: string;
+
   @Column("varchar", { name: "contactnumber", nullable: true, length: 15 })
   contactnumber: string | null;
 
@@ -33,9 +36,6 @@ export class Doctormaster001mb {
 
   @Column("tinyint", { name: "status", width: 1 })
   status: boolean;
-
-  @Column("varchar", { name: "region", length: 40 })
-  region: string;
 
   @Column("varchar", { name: "hospitalname", length: 40 })
   hospitalname: string;
@@ -73,17 +73,11 @@ export class Doctormaster001mb {
   )
   caseentry001hbs: Caseentry001hb[];
 
-  @OneToMany(() => Caseentry001hb, (caseentry001hb) => caseentry001hb.hospname2)
-  caseentry001hbs2: Caseentry001hb[];
-
   @OneToMany(
     () => Caseentry001mb,
     (caseentry001mb) => caseentry001mb.doctorname2
   )
   caseentry001mbs: Caseentry001mb[];
-
-  @OneToMany(() => Caseentry001mb, (caseentry001mb) => caseentry001mb.hospname2)
-  caseentry001mbs2: Caseentry001mb[];
 
   setProperties(doctormasterDTO: DoctormasterDTO) {
     this.slNo = doctormasterDTO.slNo;

@@ -1,4 +1,3 @@
-import { BookingentryDTO } from "src/dto/Bookingentry.dto";
 import {
   Column,
   Entity,
@@ -7,8 +6,9 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Doctormaster001mb } from "./Doctormaster001mb";
 import { Machinemaster001mb } from "./Machinemaster001mb";
+import { Doctormaster001mb } from "./Doctormaster001mb";
+import { BookingentryDTO } from "src/dto/Bookingentry.dto";
 
 @Index("mslno", ["mslno"], {})
 @Index("dslno", ["dslno"], {})
@@ -22,6 +22,9 @@ export class Bookingentry001hb {
 
   @Column("int", { name: "dslno" })
   dslno: number;
+
+  @Column("varchar", { name: "appNo", length: 50 })
+  appNo: string;
 
   @Column("datetime", { name: "date" })
   date: Date;
@@ -64,12 +67,14 @@ export class Bookingentry001hb {
   dslno2: Doctormaster001mb;
 
 
+
   setProperties(bookingentryDTO: BookingentryDTO) {
     this.bookingId = bookingentryDTO.bookingId;
     this.mslno = bookingentryDTO.mslno;
     this.dslno = bookingentryDTO.dslno;
     this.staff = bookingentryDTO.staff;
     this.date = bookingentryDTO.date;
+    this.appNo = bookingentryDTO.appNo
     this.time = bookingentryDTO.time;
     this.hospital = bookingentryDTO.hospital;
     this.insertUser = bookingentryDTO.insertUser;

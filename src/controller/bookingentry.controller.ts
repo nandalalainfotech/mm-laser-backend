@@ -14,8 +14,13 @@ export class BookingentryController {
     @UseGuards(JwtAuthGuard)
     @Post("save")
     create(@Body() bookingentryDTO: BookingentryDTO): Promise<Bookingentry001mb> {
-        // console.log("bookingentryDTO", bookingentryDTO);
+        // console.log("bookingentryDTO----------------", bookingentryDTO);
         return this.bookingentryService.create(bookingentryDTO);
+    }
+
+    @Get('getCount')
+    getCount(): Promise<string> {
+        return this.bookingentryService.getCount();
     }
 
     @UseGuards(JwtAuthGuard)

@@ -28,10 +28,6 @@ export class Applanguagesetting001mb {
   @Column("datetime", { name: "updated_datetime", nullable: true })
   updatedDatetime: Date | null;
 
-  @OneToMany(() => User001mb, (user001mb) => user001mb.language2)
-  user001mbs: User001mb[];
-
-
 
   setProperties(applanguagesettingDTO: ApplanguagesettingDTO) {
     this.id = applanguagesettingDTO.id;

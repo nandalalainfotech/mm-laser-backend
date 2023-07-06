@@ -17,7 +17,7 @@ export class MachinemasterService {
         @InjectRepository(Machinemaster001hb) private readonly machinemasterhbRepository: Repository<Machinemaster001hb>) { }
 
     async create(machinemasterDTO: MachinemasterDTO): Promise<Machinemaster001mb> {
-        console.log("machinemasterDTO---service", machinemasterDTO);
+        // console.log("machinemasterDTO---service", machinemasterDTO);
         const machinemaster001mb = new Machinemaster001mb();
         machinemaster001mb.setProperties(machinemasterDTO);
         return this.machinemasterRepository.save(machinemaster001mb);
@@ -35,7 +35,6 @@ export class MachinemasterService {
         machinemaster001mbs = await this.machinemasterRepository.find({
             where: { insertUser: username }, order: { slNo: "DESC" }
         });
-        console.log("machinemaster001mbs", machinemaster001mbs);
 
         return machinemaster001mbs;
     }
