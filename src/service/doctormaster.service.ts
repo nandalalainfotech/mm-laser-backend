@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { DoctormasterDTO } from 'src/dto/Doctormaster.dto';
 import { Doctormaster001hb } from 'src/entity/Doctormaster001hb';
 import { Doctormaster001mb } from 'src/entity/Doctormaster001mb';
+import { User001mb } from 'src/entity/User001mb';
 import { Repository } from 'typeorm';
 var pdf = require("pdf-creator-node");
 const excel = require('exceljs');
@@ -11,7 +12,8 @@ const excel = require('exceljs');
 @Injectable()
 export class DoctormasterService {
     constructor(@InjectRepository(Doctormaster001mb) private readonly doctormasterRepository: Repository<Doctormaster001mb>,
-        @InjectRepository(Doctormaster001hb) private readonly doctormasterhbRepository: Repository<Doctormaster001hb>) { }
+        @InjectRepository(Doctormaster001hb) private readonly doctormasterhbRepository: Repository<Doctormaster001hb>,
+        @InjectRepository(User001mb) private readonly userRepository: Repository<User001mb>) { }
 
 
     async create(doctormasterDTO: DoctormasterDTO): Promise<Doctormaster001mb> {
@@ -32,11 +34,21 @@ export class DoctormasterService {
 
     async findAll(username: any): Promise<Doctormaster001mb[]> {
         let doctormaster001mbs: Doctormaster001mb[] = [];
-        doctormaster001mbs = await this.doctormasterRepository.find({
-            where: { insertUser: username }, order: { slNo: "DESC" }
-        });
+        let data = await this.userRepository.findOne({ where: { username: username } });
 
-        return doctormaster001mbs;
+        if (data.rolename == 'Admin') {
+            doctormaster001mbs = await this.doctormasterRepository.find({
+                where: { insertUser: username }, order: { slNo: "DESC" }
+            });
+
+            return doctormaster001mbs;
+        } else {
+            doctormaster001mbs = await this.doctormasterRepository.find({
+                where: { insertUser: username }, order: { slNo: "DESC" }
+            });
+
+            return doctormaster001mbs;
+        }
     }
 
 

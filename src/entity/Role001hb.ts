@@ -36,10 +36,6 @@ export class Role001hb {
   @Column("datetime", { name: "updated_datetime", nullable: true })
   updatedDatetime: Date | null;
 
-  @ManyToOne(() => User001hb, (user001hb) => user001hb.role001hbs, {
-    onDelete: "CASCADE",
-    onUpdate: "RESTRICT",
-  })
   @JoinColumn([{ name: "rlid", referencedColumnName: "personId" }])
   rl: User001hb;
 

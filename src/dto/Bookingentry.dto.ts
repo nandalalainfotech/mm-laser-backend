@@ -24,12 +24,16 @@ export class BookingentryDTO extends BaseDTO {
     @IsNotEmpty()
     time: string;
 
+    @IsNotEmpty()
+    appNo: string;
+
     setProperties(bookingentry001mb: Bookingentry001mb) {
         this.bookingId = bookingentry001mb.bookingId;
         this.mslno = bookingentry001mb.mslno;
         this.dslno = bookingentry001mb.dslno;
         this.staff = bookingentry001mb.staff;
         this.date = bookingentry001mb.date;
+        this.appNo = bookingentry001mb.appNo
         this.time = bookingentry001mb.time;
         this.hospital = bookingentry001mb.hospital;
         this.insertUser = bookingentry001mb.insertUser;

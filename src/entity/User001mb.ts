@@ -1,17 +1,6 @@
-import {
-  Column,
-  Entity,
-  Index,
-  JoinColumn,
-  ManyToOne,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from "typeorm";
-import { Role001mb } from "./Role001mb";
-import { Applanguagesetting001mb } from "./Applanguagesetting001mb";
 import { UserDTO } from "src/dto/User.dto";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Index("language", ["language"], {})
 @Entity("user001mb", { schema: "erpnextgeneration5" })
 export class User001mb {
   @PrimaryGeneratedColumn({ type: "int", name: "person_id" })
@@ -23,26 +12,17 @@ export class User001mb {
   @Column("varchar", { name: "password", nullable: true, length: 100 })
   password: string | null;
 
+  @Column("varchar", { name: "rolename", nullable: true, length: 40 })
+  rolename: string | null;
+
   @Column("char", { name: "status", nullable: true, length: 1 })
   status: string | null;
 
-  @Column("int", { name: "language", nullable: true })
-  language: number | null;
+  @Column("varchar", { name: "mobileno", nullable: true, length: 10 })
+  mobileno: string | null;
 
   @Column("varchar", { name: "email", nullable: true, length: 250 })
   email: string | null;
-
-  // @Column("varchar", { name: "role", nullable: true, length: 250 })
-  // role: string | null;
-
-  @Column("varchar", { name: "filename", nullable: true, length: 255 })
-  filename: string | null;
-
-  @Column("varchar", { name: "securityquestion", nullable: true, length: 250 })
-  securityquestion: string | null;
-
-  @Column("varchar", { name: "securityanswer", nullable: true, length: 250 })
-  securityanswer: string | null;
 
   @Column("varchar", {
     name: "theme",
@@ -70,31 +50,17 @@ export class User001mb {
   @Column("varchar", { name: "lastname", nullable: true, length: 50 })
   lastname: string | null;
 
-  @OneToMany(() => Role001mb, (role001mb) => role001mb.rl)
-  role001mbs: Role001mb[];
-
-  @ManyToOne(
-    () => Applanguagesetting001mb,
-    (applanguagesetting001mb) => applanguagesetting001mb.user001mbs,
-    { onDelete: "CASCADE", onUpdate: "RESTRICT" }
-  )
-  @JoinColumn([{ name: "language", referencedColumnName: "id" }])
-  language2: Applanguagesetting001mb;
-
 
   setProperties(userDTO: UserDTO) {
     this.personId = userDTO.personId;
-    // this.domain = userDTO.domain;
     this.username = userDTO.username;
     this.firstname = userDTO.firstname;
     this.lastname = userDTO.lastname;
-    this.language = userDTO.language;
+    this.rolename = userDTO.rolename;
     this.password = userDTO.password;
     this.status = userDTO.status;
     this.email = userDTO.email;
-    // this.role = userDTO.role;
-    this.securityquestion = userDTO.securityquestion;
-    this.securityanswer = userDTO.securityanswer;
+    this.mobileno = userDTO.mobileno;
     this.theme = userDTO.theme;
     this.insertUser = userDTO.insertUser;
     this.insertDatetime = userDTO.insertDatetime;

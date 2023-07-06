@@ -103,7 +103,7 @@ export class CaseentryService {
     async findAll(username: any): Promise<Caseentry001mb[]> {
         let caseentry001mbs: Caseentry001mb[] = [];
         caseentry001mbs = await this.caseentryRepository.find({
-            where: { insertUser: username }, order: { caseentryId: "DESC" }, relations: ['doctorname2', 'hospname2', "casemachine001wbs"]
+            where: { insertUser: username }, order: { caseentryId: "DESC" }, relations: ['doctorname2', 'appointmentNo2', "casemachine001wbs"]
         });
 
         return caseentry001mbs;

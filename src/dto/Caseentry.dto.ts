@@ -11,9 +11,11 @@ export class CaseentryDTO extends BaseDTO {
     doctorname: number;
 
     @IsNotEmpty()
-    hospname: number;
+    hospname: string;
 
     status: boolean;
+
+    appointmentNo: number;
 
     Casemachine001wbs?: Casemachine001wb[];
 
@@ -22,6 +24,7 @@ export class CaseentryDTO extends BaseDTO {
         this.doctorname = caseentry001mb.doctorname;
         this.hospname = caseentry001mb.hospname;
         this.status = caseentry001mb.status;
+        this.appointmentNo = caseentry001mb.appointmentNo
         this.insertUser = caseentry001mb.insertUser;
         this.insertDatetime = caseentry001mb.insertDatetime;
         this.updatedUser = caseentry001mb.updatedUser;
