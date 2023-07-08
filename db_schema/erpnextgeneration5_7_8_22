@@ -1,0 +1,1175 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.9
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema erpnextgeneration5
+--
+
+CREATE DATABASE IF NOT EXISTS erpnextgeneration5;
+USE erpnextgeneration5;
+
+--
+-- Definition of table `applanguagesetting001hb`
+--
+
+DROP TABLE IF EXISTS `applanguagesetting001hb`;
+CREATE TABLE `applanguagesetting001hb` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `description` varchar(50) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `applanguagesetting001hb`
+--
+
+/*!40000 ALTER TABLE `applanguagesetting001hb` DISABLE KEYS */;
+INSERT INTO `applanguagesetting001hb` (`Id`,`name`,`description`,`status`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`) VALUES 
+ (7,'Telungu','language','y','aditi','2023-02-01 18:20:14',NULL,NULL),
+ (10,'None','Null','n','kalaii','2023-02-01 18:28:18',NULL,NULL),
+ (11,'none','lang','n','kalaii','2023-02-01 18:55:13',NULL,NULL),
+ (12,'null','lang','n','kalaii','2023-02-01 18:55:23',NULL,NULL),
+ (13,'Null','Lang','y','priya','2023-02-02 18:45:50',NULL,NULL);
+/*!40000 ALTER TABLE `applanguagesetting001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `applanguagesetting001mb`
+--
+
+DROP TABLE IF EXISTS `applanguagesetting001mb`;
+CREATE TABLE `applanguagesetting001mb` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `description` varchar(50) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `applanguagesetting001mb`
+--
+
+/*!40000 ALTER TABLE `applanguagesetting001mb` DISABLE KEYS */;
+INSERT INTO `applanguagesetting001mb` (`Id`,`name`,`description`,`status`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`) VALUES 
+ (4,'Tamil','lang','y','aditi','2023-01-30 14:43:56','aditi','2023-01-31 09:57:47'),
+ (5,'English','lang','y','aditi','2023-01-31 11:03:55',NULL,NULL),
+ (6,'Hindi','language','y','aditi','2023-01-31 17:23:35',NULL,NULL),
+ (8,'Kannada','language','y','aditi','2023-02-01 18:20:57',NULL,NULL),
+ (9,'Malayalam','language','y','aditi','2023-02-01 18:21:17',NULL,NULL),
+ (14,'Telugu','lang','y','priya','2023-02-03 17:50:08',NULL,NULL);
+/*!40000 ALTER TABLE `applanguagesetting001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `applicationlogosettings001hb`
+--
+
+DROP TABLE IF EXISTS `applicationlogosettings001hb`;
+CREATE TABLE `applicationlogosettings001hb` (
+  `registerid` int(11) NOT NULL AUTO_INCREMENT,
+  `clientname` varchar(255) DEFAULT NULL,
+  `clientdescription` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `filename` varchar(255) DEFAULT NULL,
+  `data` longblob,
+  `loginuser` varchar(255) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `originalfilename` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`registerid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `applicationlogosettings001hb`
+--
+
+/*!40000 ALTER TABLE `applicationlogosettings001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `applicationlogosettings001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `applicationlogosettings001mb`
+--
+
+DROP TABLE IF EXISTS `applicationlogosettings001mb`;
+CREATE TABLE `applicationlogosettings001mb` (
+  `registerid` int(11) NOT NULL AUTO_INCREMENT,
+  `clientname` varchar(255) DEFAULT NULL,
+  `clientdescription` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `filename` varchar(255) DEFAULT NULL,
+  `data` longblob,
+  `loginuser` varchar(255) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `originalfilename` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`registerid`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `applicationlogosettings001mb`
+--
+
+/*!40000 ALTER TABLE `applicationlogosettings001mb` DISABLE KEYS */;
+INSERT INTO `applicationlogosettings001mb` (`registerid`,`clientname`,`clientdescription`,`category`,`filename`,`data`,`loginuser`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`,`originalfilename`) VALUES 
+ (1,'gh','gh','','img.jpg',NULL,'sivakumar','sivakumar','2022-12-29 13:35:13',NULL,NULL,'1672301113916_img.jpg'),
+ (2,'df','df','','img1.jpg',NULL,'sivakumar','sivakumar','2022-12-29 13:44:31',NULL,NULL,'1672301671864_img1.jpg'),
+ (3,'gh','gh','','img.jpg',NULL,'sivakumar','sivakumar','2022-12-29 13:47:33',NULL,NULL,'1672301853983_img.jpg'),
+ (4,'fg','fg','','kk.jpg',NULL,'sivakumar','sivakumar','2022-12-30 11:39:20',NULL,NULL,'1672380561762_kk.jpg'),
+ (5,'df','df','','kk.jpg',NULL,'sivakumar','sivakumar','2022-12-30 11:43:49',NULL,NULL,'1672380829776_kk.jpg'),
+ (6,'fg','fg','','img.jpg',NULL,'sivakumar','sivakumar','2022-12-30 18:46:07',NULL,NULL,'1672406167483_img.jpg'),
+ (7,'gh','gh','','kk.jpg',NULL,'sivakumar','sivakumar','2022-12-30 19:11:09',NULL,NULL,'1672407669216_kk.jpg');
+/*!40000 ALTER TABLE `applicationlogosettings001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `bookingentry001hb`
+--
+
+DROP TABLE IF EXISTS `bookingentry001hb`;
+CREATE TABLE `bookingentry001hb` (
+  `bookingId` int(11) NOT NULL AUTO_INCREMENT,
+  `mslno` int(11) NOT NULL,
+  `dslno` int(11) NOT NULL,
+  `appNo` varchar(50) NOT NULL,
+  `date` datetime NOT NULL,
+  `staff` varchar(200) NOT NULL,
+  `hospital` varchar(50) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `time` time DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`bookingId`),
+  KEY `mslno` (`mslno`),
+  KEY `dslno` (`dslno`),
+  CONSTRAINT `bookingentry001hb_ibfk_1` FOREIGN KEY (`mslno`) REFERENCES `machinemaster001mb` (`sl_no`) ON DELETE CASCADE,
+  CONSTRAINT `bookingentry001hb_ibfk_2` FOREIGN KEY (`dslno`) REFERENCES `doctormaster001mb` (`sl_no`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bookingentry001hb`
+--
+
+/*!40000 ALTER TABLE `bookingentry001hb` DISABLE KEYS */;
+INSERT INTO `bookingentry001hb` (`bookingId`,`mslno`,`dslno`,`appNo`,`date`,`staff`,`hospital`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`,`time`,`status`) VALUES 
+ (1,3,4,'MM/APP/22-23/0001','2023-07-06 00:00:00','priya','Sai Hospital','siva','2023-07-06 14:54:31',NULL,NULL,'15:54:29',NULL),
+ (2,5,5,'MM/APP/22-23/0002','2023-07-07 00:00:00','priya','Arasan','siva','2023-07-07 17:57:54',NULL,NULL,'18:57:52',NULL),
+ (3,4,4,'MM/APP/22-23/0003','2023-07-07 00:00:00','priya','Apollo','siva','2023-07-07 18:08:23',NULL,NULL,'19:08:21','Approved');
+/*!40000 ALTER TABLE `bookingentry001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `bookingentry001mb`
+--
+
+DROP TABLE IF EXISTS `bookingentry001mb`;
+CREATE TABLE `bookingentry001mb` (
+  `bookingId` int(11) NOT NULL AUTO_INCREMENT,
+  `mslno` int(11) NOT NULL,
+  `dslno` int(11) NOT NULL,
+  `appNo` varchar(50) NOT NULL,
+  `date` datetime NOT NULL,
+  `staff` varchar(200) NOT NULL,
+  `hospital` varchar(50) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `time` time DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`bookingId`),
+  KEY `mslno` (`mslno`),
+  KEY `dslno` (`dslno`),
+  CONSTRAINT `bookingentry001mb_ibfk_1` FOREIGN KEY (`mslno`) REFERENCES `machinemaster001mb` (`sl_no`) ON DELETE CASCADE,
+  CONSTRAINT `bookingentry001mb_ibfk_2` FOREIGN KEY (`dslno`) REFERENCES `doctormaster001mb` (`sl_no`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bookingentry001mb`
+--
+
+/*!40000 ALTER TABLE `bookingentry001mb` DISABLE KEYS */;
+INSERT INTO `bookingentry001mb` (`bookingId`,`mslno`,`dslno`,`appNo`,`date`,`staff`,`hospital`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`,`time`,`status`) VALUES 
+ (4,3,4,'MM/APP/22-23/0001','2023-07-08 00:00:00','priya','Arasan','siva','2023-07-08 10:24:49',NULL,NULL,'11:24:47','Approved'),
+ (5,4,4,'MM/APP/22-23/0002','2023-07-08 00:00:00','priya','Apollo','siva','2023-07-08 10:31:01',NULL,NULL,'11:30:59','Approved'),
+ (6,5,4,'MM/APP/22-23/0003','2023-07-08 00:00:00','priya','Apollo','siva','2023-07-08 10:35:40',NULL,NULL,'11:35:39','Approved'),
+ (7,4,6,'MM/APP/22-23/0004','2023-07-08 00:00:00','priya','Sai Hospital','siva','2023-07-08 15:00:10',NULL,NULL,'16:00:05','Approved');
+/*!40000 ALTER TABLE `bookingentry001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `caseentry001hb`
+--
+
+DROP TABLE IF EXISTS `caseentry001hb`;
+CREATE TABLE `caseentry001hb` (
+  `caseentryId` int(11) NOT NULL AUTO_INCREMENT,
+  `appointmentNo` int(11) NOT NULL,
+  `doctorname` int(11) NOT NULL,
+  `hospname` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`caseentryId`),
+  KEY `appointmentNo` (`appointmentNo`),
+  KEY `doctorname` (`doctorname`),
+  CONSTRAINT `caseentry001hb_ibfk_1` FOREIGN KEY (`appointmentNo`) REFERENCES `bookingentry001mb` (`bookingId`) ON DELETE CASCADE,
+  CONSTRAINT `caseentry001hb_ibfk_2` FOREIGN KEY (`doctorname`) REFERENCES `doctormaster001mb` (`sl_no`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `caseentry001hb`
+--
+
+/*!40000 ALTER TABLE `caseentry001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `caseentry001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `caseentry001mb`
+--
+
+DROP TABLE IF EXISTS `caseentry001mb`;
+CREATE TABLE `caseentry001mb` (
+  `caseentryId` int(11) NOT NULL AUTO_INCREMENT,
+  `appointmentNo` int(11) NOT NULL,
+  `doctorname` int(11) NOT NULL,
+  `hospname` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`caseentryId`),
+  KEY `appointmentNo` (`appointmentNo`),
+  KEY `doctorname` (`doctorname`),
+  CONSTRAINT `caseentry001mb_ibfk_1` FOREIGN KEY (`appointmentNo`) REFERENCES `bookingentry001mb` (`bookingId`) ON DELETE CASCADE,
+  CONSTRAINT `caseentry001mb_ibfk_2` FOREIGN KEY (`doctorname`) REFERENCES `doctormaster001mb` (`sl_no`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `caseentry001mb`
+--
+
+/*!40000 ALTER TABLE `caseentry001mb` DISABLE KEYS */;
+INSERT INTO `caseentry001mb` (`caseentryId`,`appointmentNo`,`doctorname`,`hospname`,`status`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`) VALUES 
+ (6,4,4,'Arasan',0,'priya','2023-07-08 10:25:34',NULL,NULL),
+ (7,4,4,'Arasan',0,'priya','2023-07-08 10:31:31',NULL,NULL),
+ (8,5,4,'Apollo',1,'priya','2023-07-08 10:32:53',NULL,NULL),
+ (9,6,4,'Apollo',1,'priya','2023-07-08 10:41:13',NULL,NULL),
+ (10,7,6,'Sai Hospital',1,'priya','2023-07-08 15:02:50',NULL,NULL);
+/*!40000 ALTER TABLE `caseentry001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `casemachine001hb`
+--
+
+DROP TABLE IF EXISTS `casemachine001hb`;
+CREATE TABLE `casemachine001hb` (
+  `slno` int(11) NOT NULL AUTO_INCREMENT,
+  `cslno` int(11) DEFAULT NULL,
+  `mname` varchar(40) NOT NULL,
+  `numofcase` varchar(40) NOT NULL,
+  `charge` varchar(40) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`slno`),
+  KEY `cslno` (`cslno`),
+  CONSTRAINT `casemachine001hb_ibfk_1` FOREIGN KEY (`cslno`) REFERENCES `caseentry001mb` (`caseentryId`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `casemachine001hb`
+--
+
+/*!40000 ALTER TABLE `casemachine001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `casemachine001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `casemachine001wb`
+--
+
+DROP TABLE IF EXISTS `casemachine001wb`;
+CREATE TABLE `casemachine001wb` (
+  `slno` int(11) NOT NULL AUTO_INCREMENT,
+  `cslno` int(11) DEFAULT NULL,
+  `mname` varchar(40) NOT NULL,
+  `numofcase` varchar(40) NOT NULL,
+  `charge` varchar(40) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`slno`),
+  KEY `cslno` (`cslno`),
+  CONSTRAINT `casemachine001wb_ibfk_1` FOREIGN KEY (`cslno`) REFERENCES `caseentry001mb` (`caseentryId`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `casemachine001wb`
+--
+
+/*!40000 ALTER TABLE `casemachine001wb` DISABLE KEYS */;
+INSERT INTO `casemachine001wb` (`slno`,`cslno`,`mname`,`numofcase`,`charge`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`) VALUES 
+ (1,NULL,'Polarimeters','2','100','siva','2023-07-06 14:56:03',NULL,NULL),
+ (2,NULL,'scales','2','200','siva','2023-07-06 14:56:03',NULL,NULL),
+ (3,NULL,'Polarimeters','123','122','siva','2023-07-06 14:56:03',NULL,NULL),
+ (11,6,'scales','11','34','priya','2023-07-08 10:25:34',NULL,NULL),
+ (12,7,'Urine Analyser','22','222','priya','2023-07-08 10:31:31',NULL,NULL),
+ (13,8,'Urine Analyser','11','34','priya','2023-07-08 10:32:53',NULL,NULL),
+ (14,9,'Urine Analyser','11','34','priya','2023-07-08 10:41:13',NULL,NULL),
+ (15,10,'scales','11','55','priya','2023-07-08 15:02:50',NULL,NULL);
+/*!40000 ALTER TABLE `casemachine001wb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `doctormaster001hb`
+--
+
+DROP TABLE IF EXISTS `doctormaster001hb`;
+CREATE TABLE `doctormaster001hb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `doctorname` varchar(40) NOT NULL,
+  `addressline1` varchar(40) NOT NULL,
+  `addressline2` varchar(30) NOT NULL,
+  `city` varchar(40) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `contactnumber` varchar(15) DEFAULT NULL,
+  `emailid` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `hospitalname` varchar(40) NOT NULL,
+  `pincode` int(11) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `doctormaster001hb`
+--
+
+/*!40000 ALTER TABLE `doctormaster001hb` DISABLE KEYS */;
+INSERT INTO `doctormaster001hb` (`sl_no`,`doctorname`,`addressline1`,`addressline2`,`city`,`state`,`contactnumber`,`emailid`,`status`,`hospitalname`,`pincode`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`) VALUES 
+ (1,'Kavi','23,Sai Nagar','Tolgate','Trichy','Tamil Nadu','7534256430','abc@gmail.com',1,'Abc',621702,'siva','2023-06-12 19:00:22','siva','2023-06-27 12:48:12');
+/*!40000 ALTER TABLE `doctormaster001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `doctormaster001mb`
+--
+
+DROP TABLE IF EXISTS `doctormaster001mb`;
+CREATE TABLE `doctormaster001mb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `doctorname` varchar(40) NOT NULL,
+  `addressline1` varchar(40) NOT NULL,
+  `addressline2` varchar(30) NOT NULL,
+  `city` varchar(40) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `region` varchar(20) NOT NULL,
+  `contactnumber` varchar(15) DEFAULT NULL,
+  `emailid` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `hospitalname` varchar(40) NOT NULL,
+  `pincode` int(11) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `doctormaster001mb`
+--
+
+/*!40000 ALTER TABLE `doctormaster001mb` DISABLE KEYS */;
+INSERT INTO `doctormaster001mb` (`sl_no`,`doctorname`,`addressline1`,`addressline2`,`city`,`state`,`region`,`contactnumber`,`emailid`,`status`,`hospitalname`,`pincode`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`) VALUES 
+ (2,'Priya',' 24, Sannathi Street','Thiruvanaikoil','Trichy','Tamil Nadu','','7534256440','abc@gmail.com',1,'Sugam',621216,'siva','2023-06-12 19:22:27','siva','2023-06-27 12:48:19'),
+ (3,'Thiru','No 1, KC Road','Tennur','Trichy','Tamil Nadu','','6380956378','abc@gmail.com',1,'Kavery',620017,'siva','2023-06-13 10:01:07','siva','2023-06-27 12:48:29'),
+ (4,'Aravind','23,Sai Nagar','Pallavaram','Chennai','Tamil Nadu','','8768675745','aravind@gmail.com',1,'Apollo',600001,'siva','2023-06-26 13:23:10','siva','2023-06-27 15:05:07'),
+ (5,'sekar','21,Vallalar Nagar','Thalakudi','Trichy','Tamil Nadu','','7534256440','abc@gmail.com',1,'Arasan',621216,'siva','2023-06-30 17:10:47',NULL,NULL),
+ (6,'Ajay','46,Saravana Nagar','Aangarai','Trichy','Tamil Nadu','','8870020334','ajayghosh@gmail.com',1,'Sai Hospital',601703,'siva','2023-06-30 19:07:47',NULL,NULL),
+ (7,'Kavi','23,Sai Nagar','Tolgate','Trichy','Tamil Nadu','SOUTH','7534256430','abc@gmail.com',1,'abc',621216,'siva','2023-07-04 12:20:35',NULL,NULL);
+/*!40000 ALTER TABLE `doctormaster001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `employeemaster001hb`
+--
+
+DROP TABLE IF EXISTS `employeemaster001hb`;
+CREATE TABLE `employeemaster001hb` (
+  `employeeId` int(11) NOT NULL AUTO_INCREMENT,
+  `employeename` varchar(45) DEFAULT NULL,
+  `emailid` varchar(45) DEFAULT NULL,
+  `mobilenumber` varchar(15) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`employeeId`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employeemaster001hb`
+--
+
+/*!40000 ALTER TABLE `employeemaster001hb` DISABLE KEYS */;
+INSERT INTO `employeemaster001hb` (`employeeId`,`employeename`,`emailid`,`mobilenumber`,`status`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`) VALUES 
+ (1,'priya','priya@gmail.com','8925262969',1,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `employeemaster001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `employeemaster001mb`
+--
+
+DROP TABLE IF EXISTS `employeemaster001mb`;
+CREATE TABLE `employeemaster001mb` (
+  `employeeId` int(11) NOT NULL AUTO_INCREMENT,
+  `employeename` varchar(45) DEFAULT NULL,
+  `emailid` varchar(45) DEFAULT NULL,
+  `mobilenumber` varchar(15) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`employeeId`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employeemaster001mb`
+--
+
+/*!40000 ALTER TABLE `employeemaster001mb` DISABLE KEYS */;
+INSERT INTO `employeemaster001mb` (`employeeId`,`employeename`,`emailid`,`mobilenumber`,`status`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`) VALUES 
+ (2,'priya','priya@gmail.com','8596859626',0,NULL,NULL,NULL,NULL),
+ (3,'ghjghj','priya@gmail.com','1478523698',0,NULL,NULL,NULL,NULL),
+ (4,'priya','priya@gmail.com','8925262969',1,NULL,NULL,NULL,NULL),
+ (5,'thiru','abc@gmail.com','7654645665',1,'siva','2023-06-30 17:05:48',NULL,NULL),
+ (6,'sekar','abc@gmail.com','7654645663',1,'siva','2023-07-04 12:35:36',NULL,NULL),
+ (7,'aravind','abc@gmail.com','7654645663',0,'siva','2023-07-05 16:20:45',NULL,NULL),
+ (8,'priya','priyadarshini@nandalalainfotech.com','7654645663',0,'siva','2023-07-05 19:23:24',NULL,NULL);
+/*!40000 ALTER TABLE `employeemaster001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `machinemaster001hb`
+--
+
+DROP TABLE IF EXISTS `machinemaster001hb`;
+CREATE TABLE `machinemaster001hb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `machinename` varchar(255) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `machinemaster001hb`
+--
+
+/*!40000 ALTER TABLE `machinemaster001hb` DISABLE KEYS */;
+INSERT INTO `machinemaster001hb` (`sl_no`,`machinename`,`status`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`) VALUES 
+ (1,'alpha',1,'siva','2023-06-12 18:59:00',NULL,NULL),
+ (2,'bioscope',1,'siva','2023-06-12 19:21:29',NULL,NULL);
+/*!40000 ALTER TABLE `machinemaster001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `machinemaster001mb`
+--
+
+DROP TABLE IF EXISTS `machinemaster001mb`;
+CREATE TABLE `machinemaster001mb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `machinename` varchar(255) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `machinemaster001mb`
+--
+
+/*!40000 ALTER TABLE `machinemaster001mb` DISABLE KEYS */;
+INSERT INTO `machinemaster001mb` (`sl_no`,`machinename`,`status`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`) VALUES 
+ (3,'Polarimeters',1,'siva','2023-06-13 10:00:00',NULL,NULL),
+ (4,'Urine Analyser',1,'siva','2023-06-14 19:14:55','siva','2023-06-14 19:15:17'),
+ (5,'scales',1,'siva','2023-06-15 16:59:48','siva','2023-06-17 19:31:14'),
+ (6,'syringes',1,'siva','2023-06-30 17:06:36',NULL,NULL);
+/*!40000 ALTER TABLE `machinemaster001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `regionmaster001hb`
+--
+
+DROP TABLE IF EXISTS `regionmaster001hb`;
+CREATE TABLE `regionmaster001hb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `region` varchar(255) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `regionmaster001hb`
+--
+
+/*!40000 ALTER TABLE `regionmaster001hb` DISABLE KEYS */;
+INSERT INTO `regionmaster001hb` (`sl_no`,`region`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`,`status`) VALUES 
+ (5,'EAST','siva','2023-06-30 17:04:35',NULL,NULL,1);
+/*!40000 ALTER TABLE `regionmaster001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `regionmaster001mb`
+--
+
+DROP TABLE IF EXISTS `regionmaster001mb`;
+CREATE TABLE `regionmaster001mb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `region` varchar(255) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `regionmaster001mb`
+--
+
+/*!40000 ALTER TABLE `regionmaster001mb` DISABLE KEYS */;
+INSERT INTO `regionmaster001mb` (`sl_no`,`region`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`,`status`) VALUES 
+ (6,'WEST','siva','2023-06-30 17:04:48',NULL,NULL,1),
+ (7,'SOUTH','siva','2023-06-30 17:05:03',NULL,NULL,1),
+ (8,'NORTH','siva','2023-06-30 17:05:17',NULL,NULL,1);
+/*!40000 ALTER TABLE `regionmaster001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `role001hb`
+--
+
+DROP TABLE IF EXISTS `role001hb`;
+CREATE TABLE `role001hb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rlid` int(11) NOT NULL,
+  `rolename` varchar(40) NOT NULL,
+  `status` char(1) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `rlid` (`rlid`),
+  CONSTRAINT `role001hb_ibfk_1` FOREIGN KEY (`rlid`) REFERENCES `user001hb` (`person_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `role001hb`
+--
+
+/*!40000 ALTER TABLE `role001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `role001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `role001mb`
+--
+
+DROP TABLE IF EXISTS `role001mb`;
+CREATE TABLE `role001mb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rlid` int(11) NOT NULL,
+  `rolename` varchar(40) NOT NULL,
+  `status` char(1) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `role001mb`
+--
+
+/*!40000 ALTER TABLE `role001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `role001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `systemproperties001hb`
+--
+
+DROP TABLE IF EXISTS `systemproperties001hb`;
+CREATE TABLE `systemproperties001hb` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `description` varchar(60) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `status` char(1) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `systemproperties001hb`
+--
+
+/*!40000 ALTER TABLE `systemproperties001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `systemproperties001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `systemproperties001mb`
+--
+
+DROP TABLE IF EXISTS `systemproperties001mb`;
+CREATE TABLE `systemproperties001mb` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `description` varchar(60) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `status` char(1) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=376 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `systemproperties001mb`
+--
+
+/*!40000 ALTER TABLE `systemproperties001mb` DISABLE KEYS */;
+INSERT INTO `systemproperties001mb` (`ID`,`name`,`description`,`type`,`status`) VALUES 
+ (1,'Login.Domain','Manufacturing','Domain','Y'),
+ (2,'Login.Domain','Construction','Domain','Y'),
+ (3,'Login.Domain','Buying House','Domain','Y'),
+ (4,'Login.Domain','Calibration Labs','Domain','Y'),
+ (5,'Login.Domain','School','Domain','Y'),
+ (6,'Registration.SecurityQuestion','What was your childhood nickname ?','SecurityQuestion','Y'),
+ (7,'Registration.SecurityQuestion','In what city did you meet your spouse/significant other ?','SecurityQuestion','Y'),
+ (8,'Registration.SecurityQuestion','What is the name of your favorite childhood friend ?','SecurityQuestion','Y'),
+ (9,'Registration.SecurityQuestion','What street did you live on in third grade ?','SecurityQuestion','Y'),
+ (10,'Registration.SecurityQuestion','What is your oldest sibling\'s middle name ?','SecurityQuestion','Y'),
+ (11,'Registration.SecurityQuestion','What school did you attend for sixth grade ?','SecurityQuestion','Y'),
+ (12,'Item.Status','To Deliver','Status','Y'),
+ (13,'Item.Status','To Bill','Status','Y'),
+ (14,'Item.Status','Draft','Status','Y'),
+ (15,'Item.Status','Completed','Status','Y'),
+ (16,'Item.Status','Closed','Status','Y'),
+ (17,'Item.Status','Cancelled','Status','Y'),
+ (18,'EmpStatus.status','Active','status','Y'),
+ (19,'EmpStatus.status','Inactive','status','Y'),
+ (20,'EmpGender.gender','Male','gender','Y'),
+ (21,'EmpGender.gender','Female','gender','Y'),
+ (22,'Recruit.JobOpening','open','JobOpening','Y'),
+ (23,'Recruit.JobOpening','closed','JobOpening','Y'),
+ (24,'Recruit.JobApplicant','open','JobApplicant','Y'),
+ (25,'Recruit.JobApplicant','replied','JobApplicant','Y'),
+ (26,'Recruit.JobApplicant','rejected','JobApplicant','Y'),
+ (27,'Recruit.JobApplicant','hold','JobApplicant','Y'),
+ (28,'Recruit.OfferLetter','Draft','OfferLetter','Y'),
+ (29,'Recruit.OfferLetter','Submitted','OfferLetter','Y'),
+ (30,'Recruit.OfferLetter','Cancelled','OfferLetter','Y'),
+ (31,'Recruit.OfferLetter','Queued for Saving','OfferLetter','Y'),
+ (32,'Recruit.OfferLetter','Queued for Submission','OfferLetter','Y'),
+ (33,'Recruit.OfferLetter','Queued for Cancellation','OfferLetter','Y'),
+ (34,'Name.Prefix','Mr','Prefix','Y'),
+ (35,'Name.Prefix','Mrs','Prefix','Y'),
+ (36,'Name.Prefix','Ms','Prefix','Y'),
+ (37,'Name.Prefix','Other','Prefix','Y'),
+ (38,'Leave.leaveApp','Open','leaveApp','Y'),
+ (39,'Leave.leaveApp','Approved','leaveApp','Y'),
+ (40,'Leave.leaveApp','Rejected','leaveApp','Y'),
+ (41,'Leave.leaveType','Sick','leaveType','Y'),
+ (42,'Leave.leaveType','Casual','leaveType','Y'),
+ (43,'Leave.leaveType','Vacation','leaveType','Y'),
+ (44,'Leave.leaveType','Paternity','leaveType','Y'),
+ (45,'Leave.leaveType','Maternity','leaveType','Y'),
+ (46,'Leave.leaveType','Privilege','leaveType','Y'),
+ (47,'Leave.leaveType','Compensetory','leaveType','Y'),
+ (48,'Holiday.Week','Monday','Week','Y'),
+ (49,'Holiday.Week','Tuesday','Week','Y'),
+ (50,'Holiday.Week','Wednesday','Week','Y'),
+ (51,'Holiday.Week','Thursday','Week','Y'),
+ (52,'Holiday.Week','Friday','Week','Y'),
+ (53,'Holiday.Week','Saturday','Week','Y'),
+ (54,'Holiday.Week','Sunday','Week','Y'),
+ (55,'processpr.Month','1','Month','Y'),
+ (56,'processpr.Month','2','Month','Y'),
+ (57,'processpr.Month','3','Month','Y'),
+ (58,'processpr.Month','4','Month','Y'),
+ (59,'processpr.Month','5','Month','Y'),
+ (60,'processpr.Month','6','Month','Y'),
+ (61,'processpr.Month','7','Month','Y'),
+ (62,'processpr.Month','8','Month','Y'),
+ (63,'processpr.Month','9','Month','Y'),
+ (64,'processpr.Month','10','Month','Y'),
+ (65,'processpr.Month','11','Month','Y'),
+ (66,'processpr.Month','12','Month','Y'),
+ (67,'Salary.Mode','Yes','Mode','Y'),
+ (68,'Salary.Mode','No','Mode','Y'),
+ (69,'Expense.Type','Food','Type','Y'),
+ (70,'Expense.Type','Medical','Type','Y'),
+ (71,'Expense.Type','Travel','Type','Y'),
+ (72,'Expense.Type','Calls','Type','Y'),
+ (73,'Expense.Type','Others','Type','Y'),
+ (74,'Product.Planning','Sales Order','Planning','Y'),
+ (75,'Product.Planning','Material Request','Planning','Y'),
+ (76,'Product.Planning','Material Delivery','Planning','Y'),
+ (77,'Itembom.status','Enabled','status','Y'),
+ (78,'Itembom.status','Variant','status','Y'),
+ (79,'Itembom.status','Template','status','Y'),
+ (80,'Itembom.status','Disabled','status','Y'),
+ (81,'Item.Group','Products','Group','Y'),
+ (82,'Item.Group','Raw Materials','Group','Y'),
+ (83,'Item.Group','Sub Assemblies','Group','Y'),
+ (84,'Item.Group','All ItemGroups','Group','Y'),
+ (85,'Manufacture.List','Sales-WPL','List','Y'),
+ (86,'Manufacture.List','Supplier-WPL','List','Y'),
+ (87,'Manufacture.List','Work-in Progress-WPL','List','Y'),
+ (88,'Manufacture.List','Finished Goods-WPL','List','Y'),
+ (89,'Manufacture.List','All Warehouses-WPL','List','Y'),
+ (90,'PRMatReq.Type','Purchase','Type','Y'),
+ (91,'PRMatReq.Type','Material Transfer','Type','Y'),
+ (92,'PRMatReq.Type','Material Issue','Type','Y'),
+ (93,'PRMatReq.Type','Manufacture','Type','Y'),
+ (94,'PRSupp.Type','Asiatic Solution','Type','Y'),
+ (95,'PRSupp.Type','Eagle Hardware','Type','Y'),
+ (96,'PRSupp.Type','KSMerchandise','Type','Y'),
+ (97,'PRSupp.Type','New World Reality','Type','Y'),
+ (98,'PRSupp.Type','HomeBase','Type','Y'),
+ (99,'PRSupp.Type','Scotier','Type','Y'),
+ (100,'PRSupp.Type','HeliosAir','Type','Y'),
+ (101,'PRRawmat.List','Yes','List','Y'),
+ (102,'PRRawmat.List','No','List','Y'),
+ (103,'SuAddress.Type','Billing','Type','Y'),
+ (104,'SuAddress.Type','Shipping','Type','Y'),
+ (105,'SuAddress.Type','Office','Type','Y'),
+ (106,'SuAddress.Type','Personal','Type','Y'),
+ (107,'SuAddress.Type','Plant','Type','Y'),
+ (108,'SuAddress.Type','Postal','Type','Y'),
+ (109,'SuAddress.Type','Shop','Type','Y'),
+ (110,'SuAddress.Type','Subsidiary','Type','Y'),
+ (111,'SuAddress.Type','Warehouse','Type','Y'),
+ (112,'SuAddress.Type','Other','Type','Y'),
+ (113,'Supplier.Type','Distributor','Type','Y'),
+ (114,'Supplier.Type','Electrical','Type','Y'),
+ (115,'Supplier.Type','Hardware','Type','Y'),
+ (116,'Supplier.Type','Local','Type','Y'),
+ (117,'Supplier.Type','Pharmaceutical','Type','Y'),
+ (118,'Supplier.Type','Raw Material','Type','Y'),
+ (119,'Supplier.Type','Services','Type','Y'),
+ (120,'Supplier.Status','Open','Status','Y'),
+ (121,'Supplier.Status','Enabled','Status','Y'),
+ (122,'Supplier.Status','Passive','Status','Y'),
+ (123,'Supplier.Status','Replied','Status','Y'),
+ (124,'Putree.type','Supplier Type','type','Y'),
+ (125,'Putree.type','Supplier','type','Y'),
+ (126,'Putree.type','Item Group','type','Y'),
+ (127,'Putree.type','Item','type','Y'),
+ (128,'PuBase.type','Purchase Invoice','type','Y'),
+ (129,'PuBase.type','Purchase Order','type','Y'),
+ (130,'PuBase.type','Purchase Receipt','type','Y'),
+ (131,'valqty.choose','Value','choose','Y'),
+ (132,'valqty.choose','Quantity','choose','Y'),
+ (133,'range.type','Daily','type','Y'),
+ (134,'range.type','Monthly','type','Y'),
+ (135,'range.type','Weekly','type','Y'),
+ (136,'range.type','Quarterly','type','Y'),
+ (137,'range.type','Half-Yearly','type','Y'),
+ (138,'range.type','Yearly','type','Y'),
+ (139,'crms.status','Lead','status','Y'),
+ (140,'crms.status','Replied','status','Y'),
+ (141,'crms.status','Open','status','Y'),
+ (142,'crms.status','Opportunity','status','Y'),
+ (143,'crms.status','Interested','status','Y'),
+ (144,'crms.status','Converted','status','Y'),
+ (145,'crms.status','Do Not Contact','status','Y'),
+ (146,'crmscust.status','Open','status','Y'),
+ (147,'crmscust.status','Dormant','status','Y'),
+ (148,'crmscust.status','Active','status','Y'),
+ (149,'crmcontact.status','Passive','status','Y'),
+ (150,'crmcontact.status','Open','status','Y'),
+ (151,'crmcontact.status','Replied','status','Y'),
+ (152,'crmoppo.type','Sales','type','Y'),
+ (153,'crmoppo.type','Maintainence','type','Y'),
+ (154,'crmoppo.from','Lead','from','Y'),
+ (155,'crmoppo.from','Customer','from','Y'),
+ (156,'crmsoppo.status','Open','status','Y'),
+ (157,'crmsoppo.status','Quotation','status','Y'),
+ (158,'crmsoppo.status','Converted','status','Y'),
+ (159,'crmsoppo.status','Lost','status','Y'),
+ (160,'crmsoppo.status','Replied','status','Y'),
+ (161,'crmsoppo.status','Closed','status','Y'),
+ (162,'crmcommunics.status','Open','status','Y'),
+ (163,'crmcommunics.status','Replied','status','Y'),
+ (164,'crmcommunics.status','Closed','status','Y'),
+ (165,'crmcommunics.status','Linked','status','Y'),
+ (166,'crmcommunics.sentrec','Sent','sentrec','Y'),
+ (167,'crmcommunics.sentrec','Received','sentrec','Y'),
+ (168,'inactivecust.type','Sales Person','type','Y'),
+ (169,'inactivecust.type','Sales Invoice','type','Y'),
+ (170,'stktransent.title','Material issue','title','Y'),
+ (171,'stktransent.title','Material Receipt','title','Y'),
+ (172,'stktransent.title','Material Transfer','title','Y'),
+ (173,'stktransent.title','Material Transfer for Manufacture','title','Y'),
+ (174,'stktransent.title','Manufacture','title','Y'),
+ (175,'stktransent.title','Replace','title','Y'),
+ (176,'stktransent.title','Sub-Contract','title','Y'),
+ (177,'stkvoucher.type','Delivery Note','type','Y'),
+ (178,'stkvoucher.type','Purchase Receipt','type','Y'),
+ (179,'stkvoucher.type','Stock Entry','type','Y'),
+ (180,'stkvoucher.type','Sales inVoice','type','Y'),
+ (181,'shipping.status','Enabled','status','Y'),
+ (182,'shipping.status','Disabled','status','Y'),
+ (183,'receiptdoc.type','Purchase Invoice','type','Y'),
+ (184,'receiptdoc.type','Purchase Receipt','type','Y'),
+ (185,'itemnaming.select','ItemCode','select','Y'),
+ (186,'itemnaming.select','NamingServices','select','Y'),
+ (187,'defvalue.method','FIFO','method','Y'),
+ (188,'defvalue.method','Moving Average','method','Y'),
+ (189,'party.type','Customer','type','Y'),
+ (190,'party.type','Supplier','type','Y'),
+ (191,'letterhead.list','Manager','list','Y'),
+ (192,'letterhead.list','Human Resource','list','Y'),
+ (193,'letterhead.list','Finance head','list','Y'),
+ (194,'account.type','Cost of Goods Sold','type','Y'),
+ (195,'account.type','Sales','type','Y'),
+ (196,'account.type','Debtors','type','Y'),
+ (197,'account.type','National Bank','type','Y'),
+ (198,'account.type','Cash','type','Y'),
+ (199,'account.type','Stores','type','Y'),
+ (200,'account.type','Creditors','type','Y'),
+ (201,'account.type','Freight and Forwarding','type','Y'),
+ (202,'account.type','Changes','type','Y'),
+ (203,'account.type','Stock Received','type','Y'),
+ (204,'account.type','Not Billed','type','Y'),
+ (205,'payment.mode','Cash','mode','Y'),
+ (206,'payment.mode','Wire Transfer','mode','Y'),
+ (207,'payment.mode','Check','mode','Y'),
+ (208,'payment.mode','Credit Card','mode','Y'),
+ (209,'payment.mode','Bank Draft','mode','Y'),
+ (210,'currency.type','INR','type','Y'),
+ (211,'currency.type','USD','type','Y'),
+ (212,'currency.type','EUR','type','Y'),
+ (213,'currency.type','JPN','type','Y'),
+ (214,'payment.type','Receive','type','Y'),
+ (215,'payment.type','Pay','type','Y'),
+ (216,'payment.type','Internal Transfer','type','Y'),
+ (217,'payreq.status','Paid','status','Y'),
+ (218,'payreq.status','Initiated','status','Y'),
+ (219,'payreq.status','Failed','status','Y'),
+ (220,'payreq.status','Cancelled','status','Y'),
+ (221,'payreq.status','Draft','status','Y'),
+ (222,'journal.satus','Bank Entry','satus','Y'),
+ (223,'journal.satus','Cash Entry','satus','Y'),
+ (224,'journal.satus','Credit Card Entry','satus','Y'),
+ (225,'journal.satus','Debit Note','satus','Y'),
+ (226,'journal.satus','Credit Note','satus','Y'),
+ (227,'journal.satus','Centre Entry','satus','Y'),
+ (228,'journal.satus','Excise Entry','satus','Y'),
+ (229,'journal.satus','Wire off Entry','satus','Y'),
+ (230,'journal.satus','Opening Entry','satus','Y'),
+ (231,'journal.satus','Depreciation Entry','satus','Y'),
+ (232,'accounttype.name','Savings','name','Y'),
+ (233,'accounttype.name','Current','name','Y'),
+ (234,'company.domain','Manufacturing','domain','Y'),
+ (235,'company.domain','IT','domain','Y'),
+ (236,'company.domain','BPO','domain','Y'),
+ (237,'chartacc.type','Standard','type','Y'),
+ (238,'chartacc.type','Customized','type','Y'),
+ (239,'task.status','Accepted','status','Y'),
+ (240,'task.status','Approved','status','Y'),
+ (241,'task.status','Assigned','status','Y'),
+ (242,'task.status','AutoReject','status','Y'),
+ (243,'task.status','Closed','status','Y'),
+ (244,'task.status','Completed','status','Y'),
+ (245,'task.status','Failed','status','Y'),
+ (246,'task.status','In Planning','status','Y'),
+ (247,'task.status','In Progress','status','Y'),
+ (248,'task.status','Interrupted','status','Y'),
+ (249,'task.status','Not Started','status','Y'),
+ (250,'task.status','On hold','status','Y'),
+ (251,'task.status','Open','status','Y'),
+ (252,'task.status','Planned','status','Y'),
+ (253,'task.status','Rejected','status','Y'),
+ (254,'task.status','Unassigned','status','Y'),
+ (255,'task.status','Waiting for Approval','status','Y'),
+ (256,'Working','Working','task.status','Y'),
+ (257,'Receivable','Receivable','type.account','Y'),
+ (258,'type.account','Payable','account','Y'),
+ (259,'bc.type','Bank','type','Y'),
+ (260,'bc.type','Cash','type','Y'),
+ (261,'month.name','January','name','Y'),
+ (262,'month.name','February','name','Y'),
+ (263,'month.name','March','name','Y'),
+ (264,'month.name','April','name','Y'),
+ (265,'month.name','May','name','Y'),
+ (266,'month.name','June','name','Y'),
+ (267,'month.name','July','name','Y'),
+ (268,'month.name','August','name','Y'),
+ (269,'month.name','September','name','Y'),
+ (270,'month.name','October','name','Y'),
+ (271,'month.name','November','name','Y'),
+ (272,'month.name','December','name','Y'),
+ (273,'attend.status','Present','status','Y'),
+ (274,'attend.status','Absent','status','Y'),
+ (275,'emp.holiday','Sunday','holiday','Y'),
+ (276,'emp.holiday','Monday','holiday','Y'),
+ (277,'emp.holiday','Tuesday','holiday','Y'),
+ (278,'emp.holiday','Wednesday','holiday','Y'),
+ (279,'emp.holiday','Thursday','holiday','Y'),
+ (280,'emp.holiday','Friday','holiday','Y'),
+ (281,'emp.holiday','Saturday','holiday','Y'),
+ (282,'purchase.taxstatus','Enabled','taxstatus','Y'),
+ (283,'purchase.taxstatus','Disabled','taxstatus','Y'),
+ (284,'exceed.type','Warn','type','Y'),
+ (285,'exceed.type','Stop','type','Y'),
+ (286,'exceed.type','Ignore','type','Y'),
+ (287,'ProdOrder.status','Draft','status','Y'),
+ (288,'ProdOrder.status','Notstarted','status','Y'),
+ (289,'ProdOrder.status','Submitted','status','Y'),
+ (290,'ProdOrder.status','Stopped','status','Y'),
+ (291,'ProdOrder.status','Unstopped','status','Y'),
+ (292,'ProdOrder.status','In-Process','status','Y'),
+ (293,'ProdOrder.status','Completed','status','Y'),
+ (294,'ProdOrder.status','Cancelled','status','Y'),
+ (295,'Dummy.status','Dummy1','dummy','Y'),
+ (296,'Dummy.status','Dummy2','dummy','Y'),
+ (297,'Dummy.status','Dummy3','dummy','Y'),
+ (298,'Year.status','2020','year','Y'),
+ (299,'Year.status','2021','year','Y'),
+ (300,'Year.status','2022','year','Y'),
+ (301,'Year.status','2023','year','Y'),
+ (302,'Year.status','2024','year','Y'),
+ (303,'Year.status','2025','year','Y'),
+ (304,'StartYear.status','2021','startyear','Y'),
+ (305,'StartYear.status','2022','startyear','Y'),
+ (306,'StartYear.status','2023','startyear','Y'),
+ (307,'StartYear.status','2024','startyear','Y'),
+ (308,'StartYear.status','2025','startyear','Y'),
+ (309,'StartYear.status','2026','startyear','Y'),
+ (310,'StartYear.status','2027','startyear','Y'),
+ (311,'StartYear.status','2028','startyear','Y'),
+ (312,'StartYear.status','2029','startyear','Y'),
+ (313,'StartYear.status','2030','startyear','Y'),
+ (314,'StartYear.status','2031','startyear','Y'),
+ (315,'StartYear.status','2032','startyear','Y'),
+ (316,'StartYear.status','2033','startyear','Y'),
+ (317,'StartYear.status','2034','startyear','Y'),
+ (318,'StartYear.status','2035','startyear','Y'),
+ (319,'StartYear.status','2036','startyear','Y'),
+ (320,'StartYear.status','2037','startyear','Y'),
+ (321,'StartYear.status','2038','startyear','Y'),
+ (322,'StartYear.status','2039','startyear','Y'),
+ (323,'StartYear.status','2040','startyear','Y'),
+ (324,'EndYear.status','2021','endyear','Y'),
+ (325,'EndYear.status','2022','endyear','Y'),
+ (326,'EndYear.status','2023','endyear','Y'),
+ (327,'EndYear.status','2024','endyear','Y'),
+ (328,'EndYear.status','2025','endyear','Y'),
+ (329,'EndYear.status','2026','endyear','Y'),
+ (330,'EndYear.status','2027','endyear','Y'),
+ (331,'EndYear.status','2028','endyear','Y'),
+ (332,'EndYear.status','2029','endyear','Y'),
+ (333,'EndYear.status','2030','endyear','Y'),
+ (334,'EndYear.status','2031','endyear','Y'),
+ (335,'EndYear.status','2032','endyear','Y'),
+ (336,'EndYear.status','2033','endyear','Y'),
+ (337,'EndYear.status','2034','endyear','Y'),
+ (338,'EndYear.status','2035','endyear','Y'),
+ (339,'EndYear.status','2036','endyear','Y'),
+ (340,'EndYear.status','2037','endyear','Y'),
+ (341,'EndYear.status','2038','endyear','Y'),
+ (342,'EndYear.status','2039','endyear','Y'),
+ (343,'EndYear.status','2040','endyear','Y'),
+ (344,'Register.status','In Progress','register','Y'),
+ (345,'Register.status','Pending','register','Y'),
+ (346,'Register.status','Cancel','register','Y'),
+ (347,'Register.status','Authorization','register','Y'),
+ (348,'Register.status','New','register','Y'),
+ (349,'Civil.Name','ECE','Name','Y'),
+ (350,'Civil.Name','EEE','Name','Y'),
+ (351,'Civil.Name','MECH','Name','Y'),
+ (352,'Auto.Name','Hyundai','Name','Y'),
+ (353,'Auto.Name','Suzuki','Name','Y'),
+ (354,'Auto.Name','Toyato','Name','Y'),
+ (355,'Auto.Name','BMW','Name','Y'),
+ (356,'Book.Name','Drama','Name','Y'),
+ (357,'Book.Name','Poetry','Name','Y'),
+ (358,'Book.Name','Story','Name','Y'),
+ (359,'Book.Name','Easy','Name','Y'),
+ (360,'Novels.Name','Mysteries','Name','Y'),
+ (361,'Novels.Name','Thrillers','Name','Y'),
+ (362,'Novels.Name','Science Fiction','Name','Y'),
+ (363,'Novels.Name','Fantasy','Name','Y'),
+ (364,'Novels.Name','Fantasy','Name','Y'),
+ (365,'Novels.Name','Thrillers','Name','Y'),
+ (366,'Novels.Name','Fantasy','Name','Y'),
+ (367,'Batch.Name','2019-20','Name','Y'),
+ (368,'Batch.Name','2020-21','Name','Y'),
+ (369,'Batch.Name','2021-22','Name','Y'),
+ (370,'Batch.Name','2022-23','Name','Y'),
+ (371,'Author.Name','William Shakespeare','Name','Y'),
+ (372,'Author.Name','Henry James','Name','Y'),
+ (373,'Author.Name','Jane Austen','Name','Y'),
+ (374,'Author.Name','Franz Kafka','Name','Y'),
+ (375,'Author.Name','Franz Kafka','Name','Y');
+/*!40000 ALTER TABLE `systemproperties001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `user001hb`
+--
+
+DROP TABLE IF EXISTS `user001hb`;
+CREATE TABLE `user001hb` (
+  `person_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(40) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `rolename` varchar(40) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `mobileno` varchar(10) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `theme` varchar(10) DEFAULT '#286090',
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`person_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user001hb`
+--
+
+/*!40000 ALTER TABLE `user001hb` DISABLE KEYS */;
+INSERT INTO `user001hb` (`person_id`,`username`,`password`,`rolename`,`status`,`mobileno`,`email`,`theme`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`,`firstname`,`lastname`) VALUES 
+ (4,'','$2b$10$wcYuqLpi.sMywswECOIe7OWn0WkfS0HeqsnBybgyT3YijaOqt.Lfa','','','','','#286090','aravind','2023-07-05 15:07:04',NULL,NULL,'',''),
+ (6,'','$2b$10$gzRiqXCXZw4gcXDeQNw6/OsXomk2etpNVewsNy7DXK85UCV7U4Ksa','','','','','#286090','siva','2023-07-05 17:32:25',NULL,NULL,'',''),
+ (7,'','$2b$10$fSnd7ngBUBAolWRjeUhH5.afHs.lQgUvx1lrjRbrjbQZRBQ0OH.Qe','','','','','#286090','siva','2023-07-05 17:32:31',NULL,NULL,'',''),
+ (8,'','$2b$10$bxyCas7wGqE2P8Zehhudc.7GGrEiTS17fFCSBgjYSrbebkwFnwiH.','','','','','#286090','siva','2023-07-05 17:34:49',NULL,NULL,'',''),
+ (10,'Arvind','$2b$10$KHkBp/jBudSN/E3hKaW7kef2IDSO7xj6Gx5kObnkGn7fyarju1sKq','User','A','8220835047','aravinth@nandalalainfotech.com','#286090','siva','2023-07-07 18:10:35',NULL,NULL,'Arvind','A'),
+ (11,'Arvind','$2b$10$Ccmjom8k3F2LnReJwJL6le66gaIuMkOcuSV8Ier3kXrwLHjHVpfly','User','A','8220835047','ajayaravind797@gmail.com','#286090','siva','2023-07-07 18:24:28',NULL,NULL,'Arvind','A'),
+ (12,'Arvind','$2b$10$J29799PE8cwyRCcmsNPKe.3DVSDWVgEB.N67ChcXpm3.rb5hoxLn.','Admin','A','8220835047','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 11:09:40',NULL,NULL,'Arvind','Ajay'),
+ (13,'Arvind','$2b$10$FgdhIvy7rw5hN3e2gTsdUuVI4SkaQzN8kdHV5eZszwgFQ7YgQZndS','User','A','3333333333','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 11:28:49',NULL,NULL,'Arvind','Ajay'),
+ (14,'Arvind','$2b$10$I15luiXpz2nVPe5uHibEROARpn50ITCNx2dEIyq28IQDr40QIRceC','User','A','4444444444','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 12:28:07',NULL,NULL,'Arvind','A'),
+ (15,'Arvind','$2b$10$VQWbBbNfWgoKmnfzsaDHL.YT8FxSPwpar27mSL0iI1b.mFcdeGTtW','User','A','9999999999','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 12:29:50',NULL,NULL,'Arvind','A'),
+ (16,'Arvind','$2b$10$y3jjh.6DsrpT15xK1cFM2uuZRlrOoIUzxtHW.JiqslLLs.yIZuWce','User','A','3333333333','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 13:53:52',NULL,NULL,'Arvind','A'),
+ (17,'Arvind','$2b$10$lLmRXdv5W4DwY/T7ubGjVu40O6mIO/pfSk7auNmEjhiCUmvLeu/YS','User','A','1234567890','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 13:57:01',NULL,NULL,'Arvind','Arvind'),
+ (18,'Arvind','$2b$10$e2Gun80Rff2Z1aBTCoUO8.vpNrTgIKy2rUw00IgXo1/MIsIyScsCG','User','A','1234567890','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 13:59:41',NULL,NULL,'Arvind','Arvind'),
+ (19,'arvind','$2b$10$5O9z9yFwcOrbWX9rtbNOaOzLLy0Ebb5.3bDCHrGvdRv/qMdhEbq5e','User','A','1234567890',' aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 14:24:14',NULL,NULL,'arvind','arvind'),
+ (20,'Arvind','$2b$10$Hrw5SXLmBhU8hQU9ZHQ6sOjHazrKYIyOK8LhzDq4VSBgF0P7M4Xk2','User','A','1234567890','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 14:37:33',NULL,NULL,'Arvind','Arvind'),
+ (21,'Arvind','$2b$10$ttNnsnSi8SBzqE95/pYFJuIdPEHa4tb5sTl9UPyj9Hwmj/U1YXdUC','User','A','1234567890','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 14:40:50',NULL,NULL,'Arvind','Arvind'),
+ (22,'Arvind','$2b$10$k/QrnvhocIdlRbqbLWaaUemSgZTlvh.lCJapogwk96IFdz/QiaWrK','User','A','8220835047','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 14:48:18',NULL,NULL,'Arvind','Arvind'),
+ (23,'Arvind','$2b$10$sCOFd1PBG/FIRSpEOHg7PO34qPgRR2TgVua1IQQuwDMpJa1I1iyUu','User','A','9790256610','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 14:54:16',NULL,NULL,'Arvind','Arvind');
+/*!40000 ALTER TABLE `user001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `user001mb`
+--
+
+DROP TABLE IF EXISTS `user001mb`;
+CREATE TABLE `user001mb` (
+  `person_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(40) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `rolename` varchar(40) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `mobileno` varchar(10) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `theme` varchar(10) DEFAULT '#286090',
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`person_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user001mb`
+--
+
+/*!40000 ALTER TABLE `user001mb` DISABLE KEYS */;
+INSERT INTO `user001mb` (`person_id`,`username`,`password`,`rolename`,`status`,`mobileno`,`email`,`theme`,`insert_user`,`insert_datetime`,`updated_user`,`updated_datetime`,`firstname`,`lastname`) VALUES 
+ (1,'siva','$2b$10$htw1oGtxUocECyzx6zNAFeI7/LvUuJlkDFIJu/i34/QG4wrZDGqaS','Admin','A','7593036542','adc@gmail.com','#3e3e6c','siva','2021-09-06 13:18:33','kalaii','2023-02-01 18:27:48','sivakumar','karunamoorthy'),
+ (2,'thiru','$2b$10$OhYL/cX4msA7bogusc.sXu0mh.sTomq2qF2qQSBviwB78qh1UU1ke','User','B','6380956287','abc@gmail.com','#286090','siva','2023-07-05 14:51:33','siva','2023-07-05 15:37:57','thiru','p'),
+ (3,'aravind','$2b$10$kzZ/Sd5TjQK0FDy4ijbQf.h3wfUcRo9LHpTRURzag3dfTuz6V4GHW','User','B','7654235434','abc@gmail.com','#286090','thiru','2023-07-05 15:00:54',NULL,NULL,'aravind','a'),
+ (5,'priya','$2b$10$oa5z2j0NEAkZoIJzsQKdSOO2BFhCW6rGh8PaGmOlRpD.aTrmrk7aG','User','B','8925262969','priya@gmail.com','#286090','siva','2023-07-05 17:32:16',NULL,NULL,'priya','r'),
+ (9,'sekar','$2b$10$lP81.329OWdL7jN0hCV1XuFyyqO75uWdXJD0MDeFPbNpM3bX5d57y','User','A','8743232543','abc@gmail.com','#286090','siva','2023-07-05 18:44:45','siva','2023-07-05 19:29:49','sekar','l'),
+ (24,'Arvind','$2b$10$gf3usJUrLehyTIw1RrTTTuTy/6/xv.CMv1pXK3fjWyf.0ncYaOb/C','User','A','8870020334','aravinth@nandalalainfotech.com','#286090','siva','2023-07-08 15:19:21',NULL,NULL,'Arvind','Arvind');
+/*!40000 ALTER TABLE `user001mb` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

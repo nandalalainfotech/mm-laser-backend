@@ -3,7 +3,9 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Response } from "express";
 import * as fs from 'fs';
 import * as path from 'path';
+import { BookingentryDTO } from 'src/dto/Bookingentry.dto';
 import { CaseentryDTO } from 'src/dto/Caseentry.dto';
+import { Bookingentry001mb } from 'src/entity/Bookingentry001mb';
 import { Caseentry001hb } from 'src/entity/Caseentry001hb';
 import { Caseentry001mb } from 'src/entity/Caseentry001mb';
 import { Casemachine001wb } from 'src/entity/Casemachine001wb';
@@ -19,16 +21,19 @@ export class CaseentryService {
         @InjectRepository(Caseentry001mb) private readonly caseentryRepository: Repository<Caseentry001mb>,
         @InjectRepository(Caseentry001hb) private readonly caseentryhbRepository: Repository<Caseentry001hb>,
         @InjectRepository(Casemachine001wb) private readonly casemachineRepository: Repository<Casemachine001wb>,
-        @InjectRepository(Doctormaster001mb) private readonly doctormasterRepository: Repository<Doctormaster001mb>,) { }
+        @InjectRepository(Doctormaster001mb) private readonly doctormasterRepository: Repository<Doctormaster001mb>,
+        @InjectRepository(Bookingentry001mb) private readonly bookingentryRepository: Repository<Bookingentry001mb>) { }
 
     async create(caseentryDTO: CaseentryDTO): Promise<Caseentry001mb> {
 
-        const id = caseentryDTO.doctorname;
-        const doctorid = await this.doctormasterRepository.findOne({ where: { slNo: id } });
-        const emailid = doctorid.emailid;
-        // console.log("emailid------------", emailid);
+        const id = caseentryDTO.appointmentNo;
+        const booking = await this.bookingentryRepository.findOne({ where: { bookingId: id } });
+        booking.status = "Approved";
+        console.log("booking----------",booking)
+        let booking2 = await this.bookingentryRepository.update({ bookingId: id }, booking);     
+        console.log("booking2----------",booking2)
 
-
+        
         let casemachine001wbs: Casemachine001wb[] = [];
         for (let i = 0; i < caseentryDTO.Casemachine001wbs.length; i++) {
             const casemachine001wb = new Casemachine001wb();
@@ -52,6 +57,8 @@ export class CaseentryService {
         } else {
             // throw new HttpException('Please Add Item Details', HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
+           
     }
 
     async update(caseentryDTO: CaseentryDTO): Promise<Caseentry001mb> {
