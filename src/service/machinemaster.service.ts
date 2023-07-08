@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { MachinemasterDTO } from 'src/dto/Machinemaster.dto';
 import { Machinemaster001hb } from 'src/entity/Machinemaster001hb';
 import { Machinemaster001mb } from 'src/entity/Machinemaster001mb';
+import { User001mb } from 'src/entity/User001mb';
 import { Repository } from "typeorm";
 var path = require('path');
 var pdf = require("pdf-creator-node");
@@ -14,7 +15,8 @@ var fs = require("fs");
 @Injectable()
 export class MachinemasterService {
     constructor(@InjectRepository(Machinemaster001mb) private readonly machinemasterRepository: Repository<Machinemaster001mb>,
-        @InjectRepository(Machinemaster001hb) private readonly machinemasterhbRepository: Repository<Machinemaster001hb>) { }
+        @InjectRepository(Machinemaster001hb) private readonly machinemasterhbRepository: Repository<Machinemaster001hb>,
+        @InjectRepository(User001mb) private readonly userRepository: Repository<User001mb>) { }
 
     async create(machinemasterDTO: MachinemasterDTO): Promise<Machinemaster001mb> {
         // console.log("machinemasterDTO---service", machinemasterDTO);
@@ -32,11 +34,23 @@ export class MachinemasterService {
 
     async findAll(username: any): Promise<Machinemaster001mb[]> {
         let machinemaster001mbs: Machinemaster001mb[] = [];
-        machinemaster001mbs = await this.machinemasterRepository.find({
-            where: { insertUser: username }, order: { slNo: "DESC" }
-        });
+       
 
-        return machinemaster001mbs;
+        let data = await this.userRepository.findOne({ where: { username: username } });
+
+        if (data.rolename == 'Admin') {
+            machinemaster001mbs = await this.machinemasterRepository.find({
+                where: { insertUser: username }, order: { slNo: "DESC" }
+            });
+    
+            return machinemaster001mbs;
+        } else {
+            machinemaster001mbs = await this.machinemasterRepository.find({
+                 order: { slNo: "DESC" }
+            });
+    
+            return machinemaster001mbs;
+        }
     }
 
 

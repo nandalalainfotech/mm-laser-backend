@@ -44,7 +44,7 @@ export class DoctormasterService {
             return doctormaster001mbs;
         } else {
             doctormaster001mbs = await this.doctormasterRepository.find({
-                where: { insertUser: username }, order: { slNo: "DESC" }
+                 order: { slNo: "DESC" }
             });
 
             return doctormaster001mbs;
