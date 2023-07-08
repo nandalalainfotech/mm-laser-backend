@@ -29,11 +29,11 @@ export class CaseentryService {
         const id = caseentryDTO.appointmentNo;
         const booking = await this.bookingentryRepository.findOne({ where: { bookingId: id } });
         booking.status = "Approved";
-        console.log("booking----------",booking)
-        let booking2 = await this.bookingentryRepository.update({ bookingId: id }, booking);     
-        console.log("booking2----------",booking2)
+        console.log("booking----------", booking)
+        let booking2 = await this.bookingentryRepository.update({ bookingId: id }, booking);
+        console.log("booking2----------", booking2)
 
-        
+
         let casemachine001wbs: Casemachine001wb[] = [];
         for (let i = 0; i < caseentryDTO.Casemachine001wbs.length; i++) {
             const casemachine001wb = new Casemachine001wb();
@@ -58,7 +58,7 @@ export class CaseentryService {
             // throw new HttpException('Please Add Item Details', HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
-           
+
     }
 
     async update(caseentryDTO: CaseentryDTO): Promise<Caseentry001mb> {
@@ -135,7 +135,6 @@ export class CaseentryService {
             relations: [
                 "casemachine001wbs",
                 "casemachine001wbs.cslno2",
-                "hospname2",
                 "doctorname2",
             ],
         });
