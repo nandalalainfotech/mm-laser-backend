@@ -62,6 +62,7 @@ export class Caseentry001hb {
 
   setProperties(caseentryDTO: CaseentryDTO) {
     this.caseentryId = caseentryDTO.caseentryId;
+    this.appointmentNo = caseentryDTO.appointmentNo
     this.doctorname = caseentryDTO.doctorname;
     this.hospname = caseentryDTO.hospname;
     this.status = caseentryDTO.status;

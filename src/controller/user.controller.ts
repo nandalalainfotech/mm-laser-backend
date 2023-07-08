@@ -137,7 +137,7 @@ export class UserController {
 		return this.userService.updateUserName(userName);
 	}
 
-	@UseGuards(JwtAuthGuard)
+	// @UseGuards(JwtAuthGuard)
 	@Post('updatePassword')
 	updatePassword(@Body() userDTO: UserDTO): Promise<User001mb> {
 		return this.userService.updatePassword(userDTO);

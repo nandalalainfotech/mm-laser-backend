@@ -32,6 +32,9 @@ export class Bookingentry001hb {
   @Column("varchar", { name: "staff", length: 200 })
   staff: string;
 
+  @Column("varchar", { name: "status", length: 50 })
+  status: string;
+
   @Column("varchar", { name: "hospital", length: 50 })
   hospital: string;
 
@@ -73,6 +76,7 @@ export class Bookingentry001hb {
     this.mslno = bookingentryDTO.mslno;
     this.dslno = bookingentryDTO.dslno;
     this.staff = bookingentryDTO.staff;
+    this.status = bookingentryDTO.status;
     this.date = bookingentryDTO.date;
     this.appNo = bookingentryDTO.appNo
     this.time = bookingentryDTO.time;
