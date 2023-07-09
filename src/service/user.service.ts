@@ -34,7 +34,7 @@ export class UserService {
          user001mb.password = hash;
          
          let user = await this.userRepository.save(user001mb);
-         await this.mailService.sendUserConfirmation(user)
+         await this.mailService.sendUserConfirmation(user, userDTO.password)
         return user001mb
     }
     async updatePassword(userDTO: UserDTO): Promise<User001mb> {
