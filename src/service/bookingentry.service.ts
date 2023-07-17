@@ -23,7 +23,7 @@ export class BookingentryService {
         @InjectRepository(Bookingentry001hb) private readonly bookingentryhbRepository: Repository<Bookingentry001hb>) { }
 
     async create(bookingentryDTO: BookingentryDTO): Promise<Bookingentry001mb> {
-        console.log("bookingentryDTO", bookingentryDTO);
+        // console.log("bookingentryDTO", bookingentryDTO);
 
         let starttime = new Date(bookingentryDTO.time);
         bookingentryDTO.time = starttime.getHours() + ":" + starttime.getMinutes() + ":" + starttime.getSeconds();
@@ -32,7 +32,7 @@ export class BookingentryService {
         return this.bookingentryRepository.save(bookingentry001mb);
     }
     async update(bookingentryDTO: BookingentryDTO): Promise<Bookingentry001mb> {
-        console.log("bookingentryDTO222222----->", bookingentryDTO);
+        // console.log("bookingentryDTO222222----->", bookingentryDTO);
         const timeReg = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/
         if (bookingentryDTO.time) {
             if (timeReg.test(bookingentryDTO.time) === true) {
