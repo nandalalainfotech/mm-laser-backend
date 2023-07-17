@@ -21,7 +21,7 @@ export class UserService {
       
         const user001mb = await this.userRepository.findOne({ where: { personId: userDTO.personId } });
         user001mb.setProperties(userDTO);
-        user001mb.password = userDTO.password;
+        user001mb.password = user001mb.password;
         const hash = await bcrypt.hash(user001mb.password, this.saltRounds);
         user001mb.password = hash;
         return this.userRepository.save(user001mb);
@@ -29,12 +29,12 @@ export class UserService {
     async create(userDTO: UserDTO,): Promise<User001mb> {
         var user001mb = new User001mb();
         user001mb.setProperties(userDTO);
-        user001mb.password = userDTO.password;
+        user001mb.password = "erpnext001";
          const hash = await bcrypt.hash(user001mb.password, this.saltRounds);
          user001mb.password = hash;
          
          let user = await this.userRepository.save(user001mb);
-         await this.mailService.sendUserConfirmation(user, userDTO.password)
+         await this.mailService.sendUserConfirmation(user)
         return user001mb
     }
     async updatePassword(userDTO: UserDTO): Promise<User001mb> {

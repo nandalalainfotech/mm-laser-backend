@@ -8,11 +8,8 @@ import { User001mb } from '../entity/User001mb';
 export class MailService {
   constructor(private mailerService: MailerService, private config: ConfigService) { }
 
-  async sendUserConfirmation(user001mb: User001mb, password: any) {
-
-    const pwd = password;
-    
-    const temppassword = pwd;
+  async sendUserConfirmation(user001mb: User001mb) {
+    const temppassword = "erpnext001";
     await this.mailerService.sendMail({
       to: user001mb.email,
       from: 'kavichandran877@gmail.com', // override default from
