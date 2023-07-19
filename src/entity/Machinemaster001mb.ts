@@ -3,7 +3,7 @@ import { Bookingentry001hb } from "./Bookingentry001hb";
 import { Bookingentry001mb } from "./Bookingentry001mb";
 import { MachinemasterDTO } from "src/dto/Machinemaster.dto";
 
-@Entity("machinemaster001mb", { schema: "erpnextgeneration5" })
+@Entity("machinemaster001mb", { schema: "mmlaser" })
 export class Machinemaster001mb {
   @PrimaryGeneratedColumn({ type: "int", name: "sl_no" })
   slNo: number;

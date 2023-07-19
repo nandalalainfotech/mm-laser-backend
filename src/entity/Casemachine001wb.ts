@@ -10,7 +10,7 @@ import { Caseentry001mb } from "./Caseentry001mb";
 import { CasemachineDTO } from "src/dto/Casemachine.dto";
 
 @Index("cslno", ["cslno"], {})
-@Entity("casemachine001wb", { schema: "erpnextgeneration5" })
+@Entity("casemachine001wb", { schema: "mmlaser" })
 export class Casemachine001wb {
     @PrimaryGeneratedColumn({ type: "int", name: "slno" })
     slno: number;

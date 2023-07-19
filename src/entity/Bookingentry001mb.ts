@@ -15,7 +15,7 @@ import { BookingentryDTO } from "src/dto/Bookingentry.dto";
 
 @Index("mslno", ["mslno"], {})
 @Index("dslno", ["dslno"], {})
-@Entity("bookingentry001mb", { schema: "erpnextgeneration5" })
+@Entity("bookingentry001mb", { schema: "mmlaser" })
 export class Bookingentry001mb {
   @PrimaryGeneratedColumn({ type: "int", name: "bookingId" })
   bookingId: number;

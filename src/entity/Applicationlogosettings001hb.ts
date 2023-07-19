@@ -1,7 +1,7 @@
 import { ApplicationlogosettingsDTO } from "../dto/applicationlogosettings.dto";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("applicationlogosettings001hb", { schema: "erpnextgeneration5" })
+@Entity("applicationlogosettings001hb", { schema: "mmlaser" })
 export class Applicationlogosettings001hb {
   @PrimaryGeneratedColumn({ type: "int", name: "registerid" })
   registerid: number;
