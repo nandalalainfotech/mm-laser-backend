@@ -80,10 +80,8 @@ export class BookingentryService {
     }
 
     async getCount(): Promise<string> {
-        const entityManager = getManager();
         let result = await getManager().query(
             "select count(*) as row from bookingentry001mb",
-            ["row"]
         );
         var string = JSON.stringify(result);
         return string;
