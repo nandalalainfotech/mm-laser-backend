@@ -1,7 +1,7 @@
 import { EmployeemasterDTO } from "src/dto/Employeemaster.dto";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("employeemaster001hb", { schema: "erpnextgeneration5" })
+@Entity("employeemaster001hb", { schema: "mmlaser" })
 export class Employeemaster001hb {
   @PrimaryGeneratedColumn({ type: "int", name: "employeeId" })
   employeeId: number;

@@ -1,7 +1,7 @@
-import { ApplanguagesettingDTO } from "../dto/Applanguagesetting.dto";
+import { ApplanguagesettingDTO } from "src/dto/Applanguagesetting.dto";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("applanguagesetting001hb", { schema: "erpnextgeneration5" })
+@Entity("applanguagesetting001hb", { schema: "mmlaser" })
 export class Applanguagesetting001hb {
   @PrimaryGeneratedColumn({ type: "int", name: "Id" })
   id: number;
@@ -26,6 +26,7 @@ export class Applanguagesetting001hb {
 
   @Column("datetime", { name: "updated_datetime", nullable: true })
   updatedDatetime: Date | null;
+
 
   setProperties(applanguagesettingDTO: ApplanguagesettingDTO) {
     this.id = applanguagesettingDTO.id;

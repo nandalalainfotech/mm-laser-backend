@@ -10,7 +10,7 @@ import {
 import { User001hb } from "./User001hb";
 
 @Index("rlid", ["rlid"], {})
-@Entity("role001hb", { schema: "erpnextgeneration5" })
+@Entity("role001hb", { schema: "mmlaser" })
 export class Role001hb {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;

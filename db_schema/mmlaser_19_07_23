@@ -1,0 +1,695 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.9
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema mmlaser
+--
+
+CREATE DATABASE IF NOT EXISTS mmlaser;
+USE mmlaser;
+
+--
+-- Definition of table `applanguagesetting001hb`
+--
+
+DROP TABLE IF EXISTS `applanguagesetting001hb`;
+CREATE TABLE `applanguagesetting001hb` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `description` varchar(50) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `applanguagesetting001hb`
+--
+
+/*!40000 ALTER TABLE `applanguagesetting001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `applanguagesetting001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `applanguagesetting001mb`
+--
+
+DROP TABLE IF EXISTS `applanguagesetting001mb`;
+CREATE TABLE `applanguagesetting001mb` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `description` varchar(50) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `applanguagesetting001mb`
+--
+
+/*!40000 ALTER TABLE `applanguagesetting001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `applanguagesetting001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `applicationlogosettings001hb`
+--
+
+DROP TABLE IF EXISTS `applicationlogosettings001hb`;
+CREATE TABLE `applicationlogosettings001hb` (
+  `registerid` int(11) NOT NULL AUTO_INCREMENT,
+  `clientname` varchar(255) DEFAULT NULL,
+  `clientdescription` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `filename` varchar(255) DEFAULT NULL,
+  `data` longblob,
+  `loginuser` varchar(255) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `originalfilename` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`registerid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `applicationlogosettings001hb`
+--
+
+/*!40000 ALTER TABLE `applicationlogosettings001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `applicationlogosettings001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `applicationlogosettings001mb`
+--
+
+DROP TABLE IF EXISTS `applicationlogosettings001mb`;
+CREATE TABLE `applicationlogosettings001mb` (
+  `registerid` int(11) NOT NULL AUTO_INCREMENT,
+  `clientname` varchar(255) DEFAULT NULL,
+  `clientdescription` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `filename` varchar(255) DEFAULT NULL,
+  `data` longblob,
+  `loginuser` varchar(255) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `originalfilename` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`registerid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `applicationlogosettings001mb`
+--
+
+/*!40000 ALTER TABLE `applicationlogosettings001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `applicationlogosettings001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `bookingentry001hb`
+--
+
+DROP TABLE IF EXISTS `bookingentry001hb`;
+CREATE TABLE `bookingentry001hb` (
+  `bookingId` int(11) NOT NULL AUTO_INCREMENT,
+  `mslno` int(11) NOT NULL,
+  `dslno` int(11) NOT NULL,
+  `appNo` varchar(50) NOT NULL,
+  `date` datetime NOT NULL,
+  `staff` varchar(200) NOT NULL,
+  `hospital` varchar(50) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `time` time DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`bookingId`),
+  KEY `mslno` (`mslno`),
+  KEY `dslno` (`dslno`),
+  CONSTRAINT `bookingentry001hb_ibfk_1` FOREIGN KEY (`mslno`) REFERENCES `machinemaster001mb` (`sl_no`) ON DELETE CASCADE,
+  CONSTRAINT `bookingentry001hb_ibfk_2` FOREIGN KEY (`dslno`) REFERENCES `doctormaster001mb` (`sl_no`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bookingentry001hb`
+--
+
+/*!40000 ALTER TABLE `bookingentry001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bookingentry001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `bookingentry001mb`
+--
+
+DROP TABLE IF EXISTS `bookingentry001mb`;
+CREATE TABLE `bookingentry001mb` (
+  `bookingId` int(11) NOT NULL AUTO_INCREMENT,
+  `mslno` int(11) NOT NULL,
+  `dslno` int(11) NOT NULL,
+  `appNo` varchar(50) NOT NULL,
+  `date` datetime NOT NULL,
+  `staff` varchar(200) NOT NULL,
+  `hospital` varchar(50) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `time` time DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`bookingId`),
+  KEY `mslno` (`mslno`),
+  KEY `dslno` (`dslno`),
+  CONSTRAINT `bookingentry001mb_ibfk_1` FOREIGN KEY (`mslno`) REFERENCES `machinemaster001mb` (`sl_no`) ON DELETE CASCADE,
+  CONSTRAINT `bookingentry001mb_ibfk_2` FOREIGN KEY (`dslno`) REFERENCES `doctormaster001mb` (`sl_no`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bookingentry001mb`
+--
+
+/*!40000 ALTER TABLE `bookingentry001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bookingentry001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `caseentry001hb`
+--
+
+DROP TABLE IF EXISTS `caseentry001hb`;
+CREATE TABLE `caseentry001hb` (
+  `caseentryId` int(11) NOT NULL AUTO_INCREMENT,
+  `appointmentNo` int(11) NOT NULL,
+  `doctorname` int(11) NOT NULL,
+  `hospname` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`caseentryId`),
+  KEY `appointmentNo` (`appointmentNo`),
+  KEY `doctorname` (`doctorname`),
+  CONSTRAINT `caseentry001hb_ibfk_1` FOREIGN KEY (`appointmentNo`) REFERENCES `bookingentry001mb` (`bookingId`) ON DELETE CASCADE,
+  CONSTRAINT `caseentry001hb_ibfk_2` FOREIGN KEY (`doctorname`) REFERENCES `doctormaster001mb` (`sl_no`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `caseentry001hb`
+--
+
+/*!40000 ALTER TABLE `caseentry001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `caseentry001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `caseentry001mb`
+--
+
+DROP TABLE IF EXISTS `caseentry001mb`;
+CREATE TABLE `caseentry001mb` (
+  `caseentryId` int(11) NOT NULL AUTO_INCREMENT,
+  `appointmentNo` int(11) NOT NULL,
+  `doctorname` int(11) NOT NULL,
+  `hospname` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`caseentryId`),
+  KEY `appointmentNo` (`appointmentNo`),
+  KEY `doctorname` (`doctorname`),
+  CONSTRAINT `caseentry001mb_ibfk_1` FOREIGN KEY (`appointmentNo`) REFERENCES `bookingentry001mb` (`bookingId`) ON DELETE CASCADE,
+  CONSTRAINT `caseentry001mb_ibfk_2` FOREIGN KEY (`doctorname`) REFERENCES `doctormaster001mb` (`sl_no`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `caseentry001mb`
+--
+
+/*!40000 ALTER TABLE `caseentry001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `caseentry001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `casemachine001hb`
+--
+
+DROP TABLE IF EXISTS `casemachine001hb`;
+CREATE TABLE `casemachine001hb` (
+  `slno` int(11) NOT NULL AUTO_INCREMENT,
+  `cslno` int(11) DEFAULT NULL,
+  `mname` varchar(40) NOT NULL,
+  `numofcase` varchar(40) NOT NULL,
+  `charge` varchar(40) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`slno`),
+  KEY `cslno` (`cslno`),
+  CONSTRAINT `casemachine001hb_ibfk_1` FOREIGN KEY (`cslno`) REFERENCES `caseentry001mb` (`caseentryId`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `casemachine001hb`
+--
+
+/*!40000 ALTER TABLE `casemachine001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `casemachine001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `casemachine001wb`
+--
+
+DROP TABLE IF EXISTS `casemachine001wb`;
+CREATE TABLE `casemachine001wb` (
+  `slno` int(11) NOT NULL AUTO_INCREMENT,
+  `cslno` int(11) DEFAULT NULL,
+  `mname` varchar(40) NOT NULL,
+  `numofcase` varchar(40) NOT NULL,
+  `charge` varchar(40) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`slno`),
+  KEY `cslno` (`cslno`),
+  CONSTRAINT `casemachine001wb_ibfk_1` FOREIGN KEY (`cslno`) REFERENCES `caseentry001mb` (`caseentryId`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `casemachine001wb`
+--
+
+/*!40000 ALTER TABLE `casemachine001wb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `casemachine001wb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `doctormaster001hb`
+--
+
+DROP TABLE IF EXISTS `doctormaster001hb`;
+CREATE TABLE `doctormaster001hb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `doctorname` varchar(40) NOT NULL,
+  `addressline1` varchar(40) NOT NULL,
+  `addressline2` varchar(30) NOT NULL,
+  `city` varchar(40) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `contactnumber` varchar(15) DEFAULT NULL,
+  `emailid` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `hospitalname` varchar(40) NOT NULL,
+  `pincode` int(11) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `doctormaster001hb`
+--
+
+/*!40000 ALTER TABLE `doctormaster001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `doctormaster001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `doctormaster001mb`
+--
+
+DROP TABLE IF EXISTS `doctormaster001mb`;
+CREATE TABLE `doctormaster001mb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `doctorname` varchar(40) NOT NULL,
+  `addressline1` varchar(40) NOT NULL,
+  `addressline2` varchar(30) NOT NULL,
+  `city` varchar(40) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `region` varchar(20) NOT NULL,
+  `contactnumber` varchar(15) DEFAULT NULL,
+  `emailid` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `hospitalname` varchar(40) NOT NULL,
+  `pincode` int(11) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `doctormaster001mb`
+--
+
+/*!40000 ALTER TABLE `doctormaster001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `doctormaster001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `employeemaster001hb`
+--
+
+DROP TABLE IF EXISTS `employeemaster001hb`;
+CREATE TABLE `employeemaster001hb` (
+  `employeeId` int(11) NOT NULL AUTO_INCREMENT,
+  `employeename` varchar(45) DEFAULT NULL,
+  `emailid` varchar(45) DEFAULT NULL,
+  `mobilenumber` varchar(15) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`employeeId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employeemaster001hb`
+--
+
+/*!40000 ALTER TABLE `employeemaster001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `employeemaster001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `employeemaster001mb`
+--
+
+DROP TABLE IF EXISTS `employeemaster001mb`;
+CREATE TABLE `employeemaster001mb` (
+  `employeeId` int(11) NOT NULL AUTO_INCREMENT,
+  `employeename` varchar(45) DEFAULT NULL,
+  `emailid` varchar(45) DEFAULT NULL,
+  `mobilenumber` varchar(15) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`employeeId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employeemaster001mb`
+--
+
+/*!40000 ALTER TABLE `employeemaster001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `employeemaster001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `machinemaster001hb`
+--
+
+DROP TABLE IF EXISTS `machinemaster001hb`;
+CREATE TABLE `machinemaster001hb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `machinename` varchar(255) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `machinemaster001hb`
+--
+
+/*!40000 ALTER TABLE `machinemaster001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `machinemaster001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `machinemaster001mb`
+--
+
+DROP TABLE IF EXISTS `machinemaster001mb`;
+CREATE TABLE `machinemaster001mb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `machinename` varchar(255) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `machinemaster001mb`
+--
+
+/*!40000 ALTER TABLE `machinemaster001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `machinemaster001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `regionmaster001hb`
+--
+
+DROP TABLE IF EXISTS `regionmaster001hb`;
+CREATE TABLE `regionmaster001hb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `region` varchar(255) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `regionmaster001hb`
+--
+
+/*!40000 ALTER TABLE `regionmaster001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `regionmaster001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `regionmaster001mb`
+--
+
+DROP TABLE IF EXISTS `regionmaster001mb`;
+CREATE TABLE `regionmaster001mb` (
+  `sl_no` int(11) NOT NULL AUTO_INCREMENT,
+  `region` varchar(255) DEFAULT NULL,
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`sl_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `regionmaster001mb`
+--
+
+/*!40000 ALTER TABLE `regionmaster001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `regionmaster001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `role001hb`
+--
+
+DROP TABLE IF EXISTS `role001hb`;
+CREATE TABLE `role001hb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rlid` int(11) NOT NULL,
+  `rolename` varchar(40) NOT NULL,
+  `status` char(1) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `rlid` (`rlid`),
+  CONSTRAINT `role001hb_ibfk_1` FOREIGN KEY (`rlid`) REFERENCES `user001hb` (`person_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `role001hb`
+--
+
+/*!40000 ALTER TABLE `role001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `role001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `role001mb`
+--
+
+DROP TABLE IF EXISTS `role001mb`;
+CREATE TABLE `role001mb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rlid` int(11) NOT NULL,
+  `rolename` varchar(40) NOT NULL,
+  `status` char(1) NOT NULL,
+  `insert_user` varchar(40) NOT NULL,
+  `insert_datetime` datetime NOT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `role001mb`
+--
+
+/*!40000 ALTER TABLE `role001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `role001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `systemproperties001hb`
+--
+
+DROP TABLE IF EXISTS `systemproperties001hb`;
+CREATE TABLE `systemproperties001hb` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `description` varchar(60) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `status` char(1) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `systemproperties001hb`
+--
+
+/*!40000 ALTER TABLE `systemproperties001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `systemproperties001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `systemproperties001mb`
+--
+
+DROP TABLE IF EXISTS `systemproperties001mb`;
+CREATE TABLE `systemproperties001mb` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `description` varchar(60) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `status` char(1) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `systemproperties001mb`
+--
+
+/*!40000 ALTER TABLE `systemproperties001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `systemproperties001mb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `user001hb`
+--
+
+DROP TABLE IF EXISTS `user001hb`;
+CREATE TABLE `user001hb` (
+  `person_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(40) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `rolename` varchar(40) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `mobileno` varchar(10) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `theme` varchar(10) DEFAULT '#286090',
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`person_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user001hb`
+--
+
+/*!40000 ALTER TABLE `user001hb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user001hb` ENABLE KEYS */;
+
+
+--
+-- Definition of table `user001mb`
+--
+
+DROP TABLE IF EXISTS `user001mb`;
+CREATE TABLE `user001mb` (
+  `person_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(40) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `rolename` varchar(40) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `mobileno` varchar(10) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `theme` varchar(10) DEFAULT '#286090',
+  `insert_user` varchar(40) DEFAULT NULL,
+  `insert_datetime` datetime DEFAULT NULL,
+  `updated_user` varchar(40) DEFAULT NULL,
+  `updated_datetime` datetime DEFAULT NULL,
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`person_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user001mb`
+--
+
+/*!40000 ALTER TABLE `user001mb` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user001mb` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

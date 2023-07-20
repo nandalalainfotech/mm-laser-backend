@@ -12,7 +12,7 @@ import { CaseentryDTO } from "src/dto/Caseentry.dto";
 
 @Index("appointmentNo", ["appointmentNo"], {})
 @Index("doctorname", ["doctorname"], {})
-@Entity("caseentry001hb", { schema: "erpnextgeneration5" })
+@Entity("caseentry001hb", { schema: "mmlaser" })
 export class Caseentry001hb {
   @PrimaryGeneratedColumn({ type: "int", name: "caseentryId" })
   caseentryId: number;
