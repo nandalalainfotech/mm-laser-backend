@@ -81,7 +81,7 @@ export class BookingentryService {
 
     async getCount(): Promise<string> {
         let result = await getManager().query(
-            "select count(*) as row from bookingentry001mb",
+            "select count(*) as ss from bookingentry001mb",
         );
         var string = JSON.stringify(result);
         return string;
