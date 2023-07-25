@@ -25,24 +25,24 @@ export class BookingentryService {
     async create(bookingentryDTO: BookingentryDTO): Promise<Bookingentry001mb> {
         // console.log("bookingentryDTO", bookingentryDTO);
 
-        let starttime = new Date(bookingentryDTO.time);
-        bookingentryDTO.time = starttime.getHours() + ":" + starttime.getMinutes() + ":" + starttime.getSeconds();
+        // let starttime = new Date(bookingentryDTO.time);
+        // bookingentryDTO.time = starttime.getHours() + ":" + starttime.getMinutes();
         const bookingentry001mb = new Bookingentry001mb();
         bookingentry001mb.setProperties(bookingentryDTO);
         return this.bookingentryRepository.save(bookingentry001mb);
     }
     async update(bookingentryDTO: BookingentryDTO): Promise<Bookingentry001mb> {
-        // console.log("bookingentryDTO222222----->", bookingentryDTO);
-        const timeReg = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/
-        if (bookingentryDTO.time) {
-            if (timeReg.test(bookingentryDTO.time) === true) {
-                bookingentryDTO.time = bookingentryDTO.time;
-            }
-            else {
-                let starttime = new Date(bookingentryDTO.time);
-                bookingentryDTO.time = starttime.getHours() + ":" + starttime.getMinutes() + ":" + starttime.getSeconds();
-            }
-        }
+        console.log("bookingentryDTO222222----->", bookingentryDTO);
+        // const timeReg = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/
+        // if (bookingentryDTO.time) {
+        //     if (timeReg.test(bookingentryDTO.time) === true) {
+        //         bookingentryDTO.time = bookingentryDTO.time;
+        //     }
+        //     else {
+        //         let starttime = new Date(bookingentryDTO.time);
+        //         bookingentryDTO.time = starttime.getHours() + ":" + starttime.getMinutes() + ":" + starttime.getSeconds();
+        //     }
+        // }
         const bookingentry001mb = new Bookingentry001mb();
         bookingentry001mb.setProperties(bookingentryDTO);
         await this.bookingentryRepository.update({ bookingId: bookingentry001mb.bookingId }, bookingentry001mb);
