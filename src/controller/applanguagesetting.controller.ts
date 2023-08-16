@@ -3,10 +3,11 @@ import { JwtAuthGuard } from "../auth/jwt-auth.guard";
 import { ApplanguagesettingDTO } from "../dto/Applanguagesetting.dto";
 import { Applanguagesetting001mb } from "../entity/Applanguagesetting001mb";
 import { ApplanguagesettingService } from "../service/applanguagesetting.service";
+import { ApiBearerAuth } from "@nestjs/swagger";
 var path = require('path');
 const fs = require('fs');
 
-
+@ApiBearerAuth()
 @Controller('/testandreportstudio/api/applanguage')
 export class ApplanguagesettingController {
 	constructor(private readonly applanguagesettingservice: ApplanguagesettingService) { }

@@ -3,7 +3,9 @@ import { JwtAuthGuard } from "../auth/jwt-auth.guard";
 import { RoleDTO } from "../dto/Role.dto";
 import { Role001mb } from "../entity/Role001mb";
 import { RoleService } from "src/service/Role.service";
+import { ApiBearerAuth } from "@nestjs/swagger";
 
+@ApiBearerAuth()
 @Controller('/testandreportstudio/api/role')
 export class RoleController {
 	constructor(private readonly roleService: RoleService) { }

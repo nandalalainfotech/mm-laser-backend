@@ -3,7 +3,9 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { SystempropertiesDTO } from '../dto/Systemproperties.dto';
 import { Systemproperties001mb } from '../entity/Systemproperties001mb';
 import { SystemPropertiesService } from '../service/system-properties.service';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
+@ApiBearerAuth()
 @Controller('/testandreportstudio/api/systemproperties')
 export class SystemPropertiesController {
 	constructor(private readonly systemPropertiesService: SystemPropertiesService) { }

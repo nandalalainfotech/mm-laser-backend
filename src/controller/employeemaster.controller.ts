@@ -3,10 +3,11 @@ import { EmployeemasterDTO } from 'src/dto/Employeemaster.dto';
 import { Employeemaster001mb } from 'src/entity/Employeemaster001mb';
 import { EmployeemasterService } from 'src/service/employeemaster.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { ApiBearerAuth } from '@nestjs/swagger';
 var path = require('path');
 const fs = require('fs');
 
-
+@ApiBearerAuth()
 @Controller('/testandreportstudio/api/employeemaster')
 export class EmployeemasterController {
     constructor(private readonly employeemasterService: EmployeemasterService) { }

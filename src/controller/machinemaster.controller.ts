@@ -3,9 +3,11 @@ import { MachinemasterService } from "src/service/machinemaster.service";
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { Machinemaster001mb } from "src/entity/Machinemaster001mb";
 import { MachinemasterDTO } from "src/dto/Machinemaster.dto";
+import { ApiBearerAuth } from "@nestjs/swagger";
 var path = require('path');
 const fs = require('fs');
 
+@ApiBearerAuth()
 @Controller('/testandreportstudio/api/machinemaster')
 export class MachinemasterController {
     constructor(private readonly machinemasterService: MachinemasterService) { }

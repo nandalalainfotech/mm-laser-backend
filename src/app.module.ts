@@ -18,6 +18,8 @@ import { MachinemasterModule } from './module/machinemaster.module';
 import { RegionmasterModule } from './module/regionmaster.module';
 import { SystemPropertiesModule } from './module/system-properties.module';
 import { UserModule } from './module/user.module';
+import { EmployeeDetailsModule } from './module/employeedetails.module';
+import { CourseModule } from './module/course.module';
 
 
 @Module({
@@ -60,7 +62,9 @@ import { UserModule } from './module/user.module';
         BookingentryModule,
         CaseentryModule,
         CasemachineModule,
-        RegionmasterModule
+        RegionmasterModule,
+        EmployeeDetailsModule,
+        CourseModule
     ],
 
 

@@ -40,6 +40,10 @@ export class DoctormasterDTO extends BaseDTO {
     @IsNotEmpty()
     status: boolean;
 
+
+    uuid: number;
+
+
     setProperties(doctormaster001mb: Doctormaster001mb) {
         this.slNo = doctormaster001mb.slNo;
         this.doctorname = doctormaster001mb.doctorname;
@@ -51,6 +55,7 @@ export class DoctormasterDTO extends BaseDTO {
         this.emailid = doctormaster001mb.emailid;
         this.region = doctormaster001mb.region;
         this.pincode = doctormaster001mb.pincode;
+        this.uuid = doctormaster001mb.uuid;
         this.contactnumber = doctormaster001mb.contactnumber;
         this.status = doctormaster001mb.status;
         this.insertUser = doctormaster001mb.insertUser;

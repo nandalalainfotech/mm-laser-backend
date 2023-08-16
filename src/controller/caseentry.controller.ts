@@ -4,9 +4,11 @@ import { CaseentryDTO } from "src/dto/Caseentry.dto";
 import { Caseentry001mb } from "src/entity/Caseentry001mb";
 import { CaseentryService } from "src/service/caseentry.service";
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { ApiBearerAuth } from "@nestjs/swagger";
 var path = require('path');
 const fs = require('fs');
 
+@ApiBearerAuth()
 @Controller('/testandreportstudio/api/caseentry')
 export class CaseentryController {
     constructor(private readonly caseentryService: CaseentryService) { }

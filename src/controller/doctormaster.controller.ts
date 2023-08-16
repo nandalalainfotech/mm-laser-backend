@@ -3,7 +3,9 @@ import { DoctormasterDTO } from "src/dto/Doctormaster.dto";
 import { Doctormaster001mb } from "src/entity/Doctormaster001mb";
 import { DoctormasterService } from "src/service/doctormaster.service";
 import { JwtAuthGuard } from "../auth/jwt-auth.guard";
+import { ApiBearerAuth } from "@nestjs/swagger";
 
+@ApiBearerAuth()
 @Controller('/testandreportstudio/api/doctormaster')
 
 export class DoctormasterController {
@@ -26,7 +28,7 @@ export class DoctormasterController {
     @UseGuards(JwtAuthGuard)
     @Get("findAll/:username")
     findAll(@Param('username') username: any): Promise<Doctormaster001mb[]> {
-        return this.doctormasterService.findAll(username);
+        return this.doctormasterService.findAll();
     }
 
     @UseGuards(JwtAuthGuard)
@@ -35,9 +37,16 @@ export class DoctormasterController {
         return this.doctormasterService.findOne(id);
     }
 
+    // @UseGuards(JwtAuthGuard)
+    // @Delete("delete/:id")
+    // remove(@Param("id") id: number): Promise<void> {
+    //     return this.doctormasterService.remove(id);
+    // }
+
+    
     @UseGuards(JwtAuthGuard)
-    @Delete("delete/:id")
-    remove(@Param("id") id: number): Promise<void> {
+    @Delete('delete/:id')
+    remove(@Param('id') id: string): Promise<void> {
         return this.doctormasterService.remove(id);
     }
 }

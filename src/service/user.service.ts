@@ -31,8 +31,7 @@ export class UserService {
         user001mb.setProperties(userDTO);
         user001mb.password = "erpnext001";
          const hash = await bcrypt.hash(user001mb.password, this.saltRounds);
-         user001mb.password = hash;
-         
+         user001mb.password = hash;  
          let user = await this.userRepository.save(user001mb);
          await this.mailService.sendUserConfirmation(user)
         return user001mb

@@ -3,9 +3,11 @@ import { RegionmasterDTO } from "src/dto/Regionmaster.dto";
 import { Regionmaster001mb } from "src/entity/Regionmaster001mb";
 import { RegionmasterService } from "src/service/regionmaster.service";
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { ApiBearerAuth } from "@nestjs/swagger";
 var path = require('path');
 const fs = require('fs');
 
+@ApiBearerAuth()
 @Controller('/testandreportstudio/api/regionmaster')
 export class RegionmasterController {
     constructor(private readonly regionmasterService: RegionmasterService) { }

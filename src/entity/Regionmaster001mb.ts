@@ -9,6 +9,9 @@ export class Regionmaster001mb {
   @Column("varchar", { name: "region", nullable: true, length: 255 })
   region: string | null;
 
+  @Column("datetime", { name: "validity" })
+  validity: Date;
+
   @Column("tinyint", { name: "status", width: 1 })
   status: boolean;
 
@@ -27,6 +30,7 @@ export class Regionmaster001mb {
   setProperties(regionmasterDTO: RegionmasterDTO) {
     this.slNo = regionmasterDTO.slNo;
     this.region = regionmasterDTO.region;
+    this.validity = regionmasterDTO.validity;
     this.status = regionmasterDTO.status;
     this.insertUser = regionmasterDTO.insertUser;
     this.insertDatetime = regionmasterDTO.insertDatetime;

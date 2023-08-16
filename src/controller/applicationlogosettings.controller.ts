@@ -6,9 +6,11 @@ import { ApplicationlogosettingsDTO } from "../dto/applicationlogosettings.dto";
 import { Applicationlogosettings001mb } from "../entity/Applicationlogosettings001mb";
 import { ApplicationlogoSettingsservice } from "../service/applicationlogosettings.service";
 import { Request } from "supertest";
+import { ApiBearerAuth } from "@nestjs/swagger";
 var path = require('path');
 const fs = require('fs')
 
+@ApiBearerAuth()
 @Controller('/testandreportstudio/api/appsettings')
 
 export class ApplicationlogoSettingscontroller {

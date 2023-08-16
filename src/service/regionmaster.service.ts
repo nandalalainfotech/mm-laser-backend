@@ -31,10 +31,13 @@ export class RegionmasterService {
 
 
     async findAll(username: any): Promise<Regionmaster001mb[]> {
+        console.log("test->>>>>14");
+        
         let regionmaster001mbs: Regionmaster001mb[] = [];
         regionmaster001mbs = await this.regionmasterRepository.find({
             where: { insertUser: username }, order: { slNo: "DESC" }
         });
+
 
         return regionmaster001mbs;
     }

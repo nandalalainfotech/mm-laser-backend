@@ -3,9 +3,12 @@ import { CasemachineDTO } from "src/dto/Casemachine.dto";
 import { Casemachine001wb } from "src/entity/Casemachine001wb";
 import { CasemachineService } from "src/service/casemachine.service";
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { ApiBearerAuth } from "@nestjs/swagger";
 var path = require('path');
 const fs = require('fs');
 
+
+@ApiBearerAuth()
 @Controller('/testandreportstudio/api/casemachine')
 export class CaseMachineController {
     constructor(private readonly casemachineService: CasemachineService) { }

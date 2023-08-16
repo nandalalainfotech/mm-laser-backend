@@ -9,11 +9,15 @@ export class RegionmasterDTO extends BaseDTO {
     region: string | null;
 
     @IsNotEmpty()
+    validity: Date;
+
+    @IsNotEmpty()
     status: boolean;
 
     setProperties(regionmaster001mb: Regionmaster001mb) {
         this.slNo = regionmaster001mb.slNo;
         this.region = regionmaster001mb.region;
+        this.validity = regionmaster001mb.validity;
         this.insertUser = regionmaster001mb.insertUser;
         this.insertDatetime = regionmaster001mb.insertDatetime;
         this.updatedUser = regionmaster001mb.updatedUser;

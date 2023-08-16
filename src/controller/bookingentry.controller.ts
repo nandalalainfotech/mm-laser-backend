@@ -3,9 +3,11 @@ import { BookingentryDTO } from "src/dto/Bookingentry.dto";
 import { Bookingentry001mb } from "src/entity/Bookingentry001mb";
 import { BookingentryService } from "src/service/bookingentry.service";
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { ApiBearerAuth } from "@nestjs/swagger";
 var path = require('path');
 const fs = require('fs');
 
+@ApiBearerAuth()
 @Controller('/testandreportstudio/api/bookingentry')
 export class BookingentryController {
     constructor(private readonly bookingentryService: BookingentryService) { }

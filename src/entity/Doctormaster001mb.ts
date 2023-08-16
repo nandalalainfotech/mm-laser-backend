@@ -43,6 +43,9 @@ export class Doctormaster001mb {
   @Column("int", { name: "pincode" })
   pincode: number;
 
+  @Column("int", { name: "uuid" })
+  uuid: number;
+
   @Column("varchar", { name: "insert_user", length: 40 })
   insertUser: string;
 
@@ -87,6 +90,7 @@ export class Doctormaster001mb {
     this.city = doctormasterDTO.city;
     this.state = doctormasterDTO.state;
     this.region = doctormasterDTO.region;
+    this.uuid = doctormasterDTO.uuid;
     this.hospitalname = doctormasterDTO.hospitalname;
     this.emailid = doctormasterDTO.emailid;
     this.pincode = doctormasterDTO.pincode;
